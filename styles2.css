@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsla(35, 94%, 49%, 0.6);
+  background-size: cover;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Poetsen One", sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  width: 60vw;
+  height: 80vh;
+  background-color: hsla(244, 16%, 92%, 0.6);
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(232, 118, 4, 0.3);
+  width: 400px;
+  border-radius: 25px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #ff5f00;
+}
+
+a {
+  color: #ff5f00;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  position: relative;
+  align-items: start;
+}
+
+.form-control label {
+  color: black;
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  align-items: left;
+  font-size: 1rem;
+}
+
+.form-control input {
+  border: 2px solid black;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 7px;
+  font-size: 14px;
+  align-items: left;
+  box-shadow: 10px 10px 5px #ff5f00;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: hsla(29, 89%, 50%, 0.6);
+}
+
+.form-control.success input {
+  border-color: green;
+}
+
+.form-control.error input {
+  border-color: red;
+}
+
+.form-control small {
+  color: red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form button {
+  cursor: pointer;
+  background-color: #080808;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 1rem;
+  padding: 10px;
+  margin-top: 20px;
+  margin: 12px auto 10%;
+  height: 40px;
+  width: 100%;
+  transition: 0.2s ease-in;
+  font-weight: bold;
+}
+
+.form button:hover {
+  background-color: #ff5f00;
+}

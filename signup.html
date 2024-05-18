@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Register</title>
+    <link rel="stylesheet" href="styles2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="register.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form
+        id="form"
+        class="form"
+        method="get"
+        action="/melsoft-ticket-website/sunfest-master/login.html"
+      >
+        <h2>Sign Up</h2>
+        <br />
+        <div class="form-control">
+          <label for="userName">Username</label>
+          <input type="text" id="userName" placeholder="Enter username" />
+        </div>
+        <div class="form-control">
+          <span id="emailInput" style="color: yellow"></span>
+          <label for="emailInput">Email</label>
+          <input
+            type="email"
+            id="emailInput"
+            oninput="validateEmailInput()"
+            placeholder="Enter email"
+          />
+        </div>
+        <div class="form-control">
+          <label for="passwordInput">Password</label>
+          <input type="password" id="pass" placeholder="Enter password" />
+          <i class="ri-eye-off-line login__eye" id="input-icon"></i>
+        </div>
+        <div class="form-control">
+          <label for="password2">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm_pass"
+            placeholder="Confirm
+          password"
+            onkeyup="validate_password()"
+          />
+        </div>
+        <div class="login_check">
+          <input type="checkbox" class="login_check-input" id="input-check" />
+          <label for="input-check" class="login_check-input">Remember Me</label>
+        </div>
+        <span id="wrong_pass_alert"></span>
+        <button
+          class="btn"
+          type="submit"
+          id="create"
+          onclick="wrong_pass_alert()"
+          value="Open Window"
+          onclick="validate('form')"
+          value="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

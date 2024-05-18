@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles2.css" />
+    <script src="login.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <form
+        id="form"
+        class="form"
+        method="get"
+        action="/melsoft-ticket-website/sunfest-master/ticket.html"
+      >
+        <h2>Welcome Back</h2>
+
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input type="text" id="email" placeholder="Enter email" />
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" />
+        </div>
+
+        <button type="submit" onclick="validate('form')" value="submit">
+          Login
+        </button>
+        <br />
+        <a href="signup.html"> <h4>Go Back</h4></a>
+      </form>
+    </div>
+  </body>
+</html>
