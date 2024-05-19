@@ -295,11 +295,11 @@ body {
     color: rgb(255, 255, 255);
     padding: 12px 16px;
     display: block;
-  }
+}
   
- .dropdown-content .dropdown:hover{
+.site-navigation .dropdown:hover .dropdown-content{
     display: block;
-  }
+}
 
 @media screen and (min-width: 992px) {
   .header-bar .site-branding {
@@ -351,8 +351,9 @@ body {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1; /* Bring hero content to the foreground */
-    color: white; /* Adjust text color for visibility */
+    z-index: 1; 
+    color: white; 
+    width: 90%;
 }
 
 .hero-content .entry-header {
@@ -361,7 +362,6 @@ body {
 }
 
 .hero-content .entry-header h2 {
-    margin: 0;
     font-family: mountains;
     font-size: 40px;
     background: -webkit-linear-gradient(#ff5f00, #ff5f00);
@@ -372,20 +372,18 @@ body {
 
 .hero-content .entry-header h2 span{
     padding: 25px;
-    margin: 0;
     font-family: mountains;
-    font-size:40px;
-    background: -webkit-linear-gradient(#ff5f00, #ff5f00);
+    background: -webkit-linear-gradient(#ff5500, #ff5f00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block; 
-    vertical-align: top;
+    vertical-align: bottom;
 }
 
 .hero-content .entry-header .entry-meta-date {
   position: absolute;
   width: 100%;
-  top: 20px;
+  top: 40px;
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   font-weight: 500;
@@ -399,7 +397,7 @@ body {
     }
 
     .hero-content .entry-header h2 span{
-        font-size: 82px;
+        font-size: 72px;
     }
 
   .hero-content .entry-header .entry-meta-date {
@@ -415,7 +413,7 @@ body {
 }
 
 .countdown-holder {
-  min-width: 150px;
+  min-width: 100px;
   margin-bottom: 30px;
 }
 
@@ -495,18 +493,6 @@ body {
 .hero-content .entry-footer .button .actual-text {
     color: white; /* or any other color you prefer */
 }
-
-/* .hero-content .entry-footer a:hover, .hero-content .entry-footer .current {
-    background: -webkit-linear-gradient(#f77931, #ff5f00);
-    color: hsl(0, 0%, 0%);
-} */
-
-
-
-/* Hover effect */
-/* .hero-content .entry-footer a.btn.current:hover {
-    background: -webkit-linear-gradient(#ff5f00, #f77931);
-} */
 
 /*------------------------------------------------------------
 # The Lineup Artists - Headliners
@@ -2300,6 +2286,7 @@ body {
 .tabs-container {
   background: #f3f8f9;
   box-shadow: 5px 14px 100px rgba(0, 0, 0, 0.1);
+  width: 120%;
 }
 
 .tabs-container .tab-content {
