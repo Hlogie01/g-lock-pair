@@ -34,8 +34,21 @@ body {
 /*------------------------------------------------------------
 # site-header
 ------------------------------------------------------------*/
-.home-page {
-    background: url(images/middle-cover.jpg) no-repeat;
+.carousel-item{
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust height as needed */
+    overflow: hidden; /* Ensure video doesn't overflow */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers entire container */
+    z-index: -1; /* Send video to the background */
 }
 
 .site-header {
@@ -52,9 +65,81 @@ body {
     max-width: 100%;
 }
 
+/* Carousel items */
+.carousel-inner {
+    position: relative;
+    text-align: center; /* To center the content within each item */
+    max-width: 100%;
+}
+
+.carousel-item::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+}
+
+.carousel-control-prev {
+    width: 90px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: var(--bs-primary);
+    border-radius: 0 50px 50px 0;
+    opacity: 1;
+    z-index: 1000;
+    transform: translateY(-50%);
+
+}
+
+.carousel-control-prev:hover {
+    background: var(--bs-secondary);
+    transition: .8s;
+}
+
+.carousel-control-next {
+    width: 90px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: var(--bs-primary);
+    border-radius: 50px 0 0 50px;
+    opacity: 1;
+}
+
+.carousel-control-next:hover {
+    background: var(--bs-secondary);
+    transition: .8s;
+}
+
+#carouselId .carousel-indicators li {
+    width: 30px;
+    height: 10px;
+    background: var(--bs-primary);
+    margin: 10px;
+    border-radius: 30px;
+    opacity: 1;
+}
+
+#carouselId .carousel-indicators li:hover {
+    background: var(--bs-secondary);
+    opacity: 1;
+}
+
 /*------------------------------------------------------------
 ## header-bar
 ------------------------------------------------------------*/
+------------------------------------------------------------*/
+.site-header {
+    position: relative;
+    width: 100%;
+}
+
 .site-header .header-bar {
     position: absolute;
     top: 0;
@@ -141,8 +226,8 @@ body {
     top: -11px;
     right: 15px;
     z-index: 9999;
-    width: 100%;
-    height: 22px;
+    width: auto;
+    height: 32px;
     overflow: hidden;
     list-style: none;
     transition: all .35s;
@@ -158,12 +243,11 @@ body {
     top: 0;
     left: -320px;
     z-index: 9999;
-    width: 320px;
-    height: 100vh;
-    overflow-x: scroll;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
     padding: 30px;
     margin: 0;
-    background: #050505;
     transition: all 0.35s;
 }
 
@@ -174,16 +258,48 @@ body {
 .site-navigation ul li {
     display: block;
     padding: 15px 0;
+    position: relative;
 }
 
 .site-navigation ul li a {
     display: block;
     color: #fff;
     transition: all 0.35s;
-    text-decoration: none;
-    font-size: 14px;
-    padding-left: 40px;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
+.site-navigation ul li a:hover {
+    color: #ff5f00;
+    text-shadow: 0 0 10px #ff5f00;
+ }
+
+ .site-navigation .dropdown {
+    position: relative;
+    
+}
+
+.site-navigation .dropdown-content{
+    position: fixed;
+    background-color: #2b2828;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    display: none;
+}
+
+.site-navigation .dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    display: block;
+  }
+  
+ .dropdown-content .dropdown:hover{
+    display: block;
+  }
 
 @media screen and (min-width: 992px) {
     .header-bar .site-branding {
@@ -194,7 +310,7 @@ body {
         position: relative;
         top: auto;
         right: auto;
-        height: auto;
+        height: 20%;
         padding-right: 35px;
         background: transparent;
     }
@@ -231,9 +347,12 @@ body {
 # hero
 -----------------------------------------------------------*/
 .hero-content {
-    padding: 220px 0;
-    background: url("images/cover.jpg") no-repeat;
-    background-size: cover;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Bring hero content to the foreground */
+    color: white; /* Adjust text color for visibility */
 }
 
 .hero-content .entry-header {
@@ -242,13 +361,25 @@ body {
 }
 
 .hero-content .entry-header h2 {
-    padding: 50px;
     margin: 0;
     font-family: mountains;
-    font-size:120px;
-    background: -webkit-linear-gradient(#00d0ff, #25ffbf);
+    font-size: 40px;
+    background: -webkit-linear-gradient(#ff5f00, #ff5f00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline-block; 
+}
+
+.hero-content .entry-header h2 span{
+    padding: 25px;
+    margin: 0;
+    font-family: mountains;
+    font-size:40px;
+    background: -webkit-linear-gradient(#ff5f00, #ff5f00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; 
+    vertical-align: top;
 }
 
 .hero-content .entry-header .entry-meta-date {
@@ -264,7 +395,11 @@ body {
 
 @media screen and (min-width: 992px) {
     .hero-content .entry-header h2 {
-        font-size: 172px;
+        font-size: 102px;
+    }
+
+    .hero-content .entry-header h2 span{
+        font-size: 82px;
     }
 
     .hero-content .entry-header .entry-meta-date {
@@ -276,7 +411,7 @@ body {
 ## countdown
 ------------------------------------------------------------*/
 .countdown {
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .countdown-holder {
@@ -292,7 +427,7 @@ body {
     font-size: 72px;
     font-weight: 600;
     line-height: 1;
-    color: hsl(0, 0%, 100%);
+    color:#ff5f00;
 }
 
 .countdown-holder label {
@@ -306,23 +441,72 @@ body {
 ## hero-content entry-footer
 ------------------------------------------------------------*/
 .hero-content .entry-footer {
-    margin-top: 125px;
+    margin-top: 35px;
     text-align: center;
 }
 
-.hero-content .entry-footer .btn {
-    background: hsl(0, 0%, 100%);
-    padding: 16px 40px;
-    border-radius: 0;
-    margin-right: 20px;
-    color: hsl(0, 0%, 17%);
-    font-weight: 600;
+/* === removing default button style ===*/
+.hero-content .entry-footer .button {
+    margin-left: 20px;
+    height: auto;
+    background: rgb(0, 0, 0);
+    padding: 0;
+    border: none;
+    cursor: pointer;
+  }
+
+.hero-content .entry-footer .button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: #ff5f00;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+    position: relative;
 }
 
-.hero-content .entry-footer a:hover, .hero-content .entry-footer .current {
-    background: -webkit-linear-gradient(#00d0ff, #25ffbf);
-    color: hsl(0, 0%, 0%);
+/* this is the text, when you hover on button */
+.hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.2s;
+    -webkit-text-stroke: 2px var(--animation-color);
+  }
+  /* hover */
+  .button:hover .hover-text {
+    width: 104%;
+    border: none;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+  }
+
+/* Adjust the color property to make the original text visible */
+.hero-content .entry-footer .button .actual-text {
+    color: white; /* or any other color you prefer */
 }
+
+/* .hero-content .entry-footer a:hover, .hero-content .entry-footer .current {
+    background: -webkit-linear-gradient(#f77931, #ff5f00);
+    color: hsl(0, 0%, 0%);
+} */
+
+
+
+/* Hover effect */
+/* .hero-content .entry-footer a.btn.current:hover {
+    background: -webkit-linear-gradient(#ff5f00, #f77931);
+} */
 
 /*------------------------------------------------------------
 # The Lineup Artists - Headliners
@@ -932,8 +1116,8 @@ body {
 /*------------------------------------------------------------
 # site-header
 ------------------------------------------------------------*/
-.about-us .site-header {
-}
+/* .about-us .site-header {
+} */
 
 .about-us .site-header figure {
     margin: 0;
@@ -948,8 +1132,8 @@ body {
 ## Page Header
 ------------------------------------------------------------*/
 .page-header {
-    min-height: 520px;
-    padding-top: 280px;
+    min-height: 20px;
+    padding-top: 0;
     background-size: cover;
 }
 
@@ -960,8 +1144,8 @@ body {
 
 .page-header .entry-title {
     font-size: 72px;
-    color: white;
-    margin: 0;
+    color: #ff5f00;
+    margin-top: 22%;
     padding: 0;
 }
 
@@ -970,7 +1154,7 @@ body {
     margin: 0;
     font-size: 14px;
     font-weight: 300;
-    color: #fff;
+    color: #ff5f00;
     list-style: none;
 }
 
@@ -1000,7 +1184,7 @@ body {
 }
 
 .main-content {
-    margin: 120px 0;
+    margin: 100px 0;
 }
 
 .main-content .entry-header .entry-title p {
@@ -1222,51 +1406,129 @@ body {
 /*------------------------------------------------------------
 # tickets-page
 ------------------------------------------------------------*/
-.tickets-page {
+/* .tickets-page {
     background: url("images/elements-total-background.jpg") no-repeat;
     width: 100%;
     height: 100%;
+} */
+
+.ticket-video{
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Adjust height as needed */
+    overflow: hidden; /* Ensure video doesn't overflow */
+}
+
+.ticket-hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers entire container */
+    z-index: -1; /* Send video to the background */
 }
 
 /*------------------------------------------------------------
 # Page Header
 ------------------------------------------------------------*/
-.tickets-page .page-header {
-    background: url("images/tickets-page-header-background.jpg") no-repeat;
-}
-
-.tickets-page .tabs {
-    margin-top: 80px;
-}
-
-.tickets-page .tabs ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.tickets-page .tabs .active {
-    background: -webkit-linear-gradient(#00d0ff, #25ffbf) !important;
-}
-
-.tabs .tab-nav {
-    padding: 10px 10px;
+.tickets-page .tabs .tab-nav {
+    padding: 10px 20px;
     margin-right: 0;
     font-size: 13px;
     line-height: 1;
-    font-weight: 500;
-    color: #040608;
+    font-weight: 900;
     cursor: pointer;
+    margin-top: 35px;
+    text-align: center;
 }
 
-.tabs .tab-nav:hover {
-    background: -webkit-linear-gradient(#00d0ff, #25ffbf) !important;
+.tickets-page .tabs .tab-nav .btn {
+    margin-left: 10px;
+    height: auto;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    --text-stroke-color: rgba(0, 0, 0, 0.6);
+    --animation-color: #ff5f00;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+    position: relative;
+    border-radius: 20px;
+}
+
+.tickets-page .tabs .tab-nav .btn::before {
+    margin-left: auto;
+    border: none;
+}
+
+.tickets-page .tabs .tab-nav .btn::after,
+.tickets-page .tabs .tab-nav .btn::before {
+    content: '';
+    width: 0%;
+    height: 5px;
+    background: #ff5f00;
+    display: block;
+    transition: 0.5s;
+    border: none;
+}
+
+.tickets-page .tabs .tab-nav .btn:hover::after,
+.tickets-page .tabs .tab-nav .btn:hover::before {
+    width: 100%;
+    border: none;
+}
+
+/* this is the text, when you hover on button */
+.tickets-page .tabs .tab-nav .btn:hover .hover-text {
+    width: 101%;
+    border: none;
+}
+
+.tickets-page .tabs .tabs-nav .tab-nav.active {
+    background: -webkit-linear-gradient(#ff5f00, #ff5f00) !important;
+    border: none;
+}
+
+.tickets-page .tabs .active {
+    background: -webkit-linear-gradient(#ff5f00, #ff5f00) !important;
+}
+
+.btn {
+    background: none;
+    margin-left: 20px;
+    border: none;
+}
+
+.btn-ticket{
+    margin-left: 20px;
+    background-color: #fff;
+    border: none;
+    padding: 10px 20px;
+}
+
+.btn::after, 
+.btn::before {
+    content: '';
+    width: 0%;
+    height: 5px;
+    background: #ff5f00;
+    display: block;
+    transition: 0.5s;
+}
+  
+.btn:hover::after, .btn:hover::before {
+    width: 100%;
 }
 
 .tickets-page .tabs .tabs-container {
     margin-top: 5px;
-    box-shadow: 13px 26px 139px rgba(0, 0, 0, 0.1);
-    background: #fff;
 }
 
 .tickets-page .tabs .tab-content {
@@ -1437,23 +1699,7 @@ body {
     cursor: pointer;
 }
 
-.tickets-page .number-of-tickets .ticket-count {
-    font-size: 18px;
-    font-weight: 400;
-    color: #03070c;
-    width: 32px;
-    border: 0;
-    text-align: center;
-    background: #f3f8f9;
-}
 
-.tickets-page .clear-ticket-count {
-    font-size: 16px;
-    font-weight: 500;
-    color: #989898;
-    margin-right: 60px;
-    cursor: pointer;
-}
 
 .tickets-page .ticket-row .btn {
     background: #f3f8f9;
@@ -1462,6 +1708,245 @@ body {
     font-weight: 500;
     color: #ff2630;
 }
+
+/*------------------------------------------------------------
+# Tickets Page Ticket Purchasing
+------------------------------------------------------------*/
+.price .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1.4rem;
+    margin: 10px 20px;
+}
+
+.price .box-container .box{
+    padding: 2rem 2rem;
+    background: #e6e4e4;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.box h3.title,
+.box h3.price,
+.box ul li {
+    color: black; /* Change the font color to black */
+}
+
+.price .box-container .box:hover{
+    transform: scale(1.03);
+    box-shadow: 10px 15px 10px rgba(255, 102, 0, 0.5);
+}
+
+.price .box-container .box .title{
+    background: #ff5500;
+    color: rgb(0, 0, 0);
+    padding: 1rem 0;
+    font-size: 2rem;
+}
+
+.price .box-container .box .amount{
+    color: rgb(0, 0, 0);
+    padding-top: 1rem;
+    padding-bottom: 2.2rem;
+    font-size: 2rem;
+}
+
+.price .box-container .box ul {
+    list-style: none;
+    padding: .5rem 0;
+}
+
+.price .box-container .box ul li {
+    font-size: 1.5rem;
+    color: #000000;
+    padding: .5rem 0;
+    font-family: inherit;
+}
+
+.price .box-container .box ul li i{
+    font-size: 1.3rem;
+    color: #000000;
+    padding-right: 1rem;
+}
+
+.price .box-container .box ul li i .fa-check{
+    color: #ff5500;
+}
+
+.tickets-page .number-of-tickets {
+    display: flex;
+    margin: 20px auto; 
+}
+
+.tickets-page .number-of-tickets .increase-ticket,
+.tickets-page .number-of-tickets .decrease-ticket {
+    font-size: 30px;
+    font-weight: 500;
+    color: #03070c;
+    cursor: pointer;
+}
+
+.tickets-page .number-of-tickets .ticket-count {
+    font-size: 28px;
+    font-weight: 400;
+    color: #03070c;
+    width: 60px;
+    border: 0;
+    text-align: center;
+    background: #e6e4e4;
+}
+
+.tickets-page .clear-ticket-count .btn-ticket {
+    font-size: 17px;
+    color: #2b2929;
+    cursor: pointer;
+    background:  #ffffff; 
+    padding: 5px 10px; 
+    width: 40%;
+    border-radius: 5px;
+}s
+
+/* Tickets About Event Section */
+.tab-content .slide{
+    /* position: absolute; */
+    top: 50%;
+    left: 30%;
+    /* transform: translate(-50%, -50%); */
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 30px 50px #505050;
+    
+}
+
+.tab-content  .slide .item{
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: 80%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    /* box-shadow: 0 30px 50px #ff5500; */
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.tab-content .slide .item:nth-child(1) { 
+    top: 16%;
+    left: 4%;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 80%;
+    height: 80%;
+}
+.tab-content  .slide .item:nth-child(2){
+    left: 41%;
+    display: block;
+}
+.tab-content  .slide .item:nth-child(3){
+    left: 60%;
+}
+.tab-content  .slide .item:nth-child(4){
+    left: calc(60% + 220px);
+}
+.tab-content  .slide .item:nth-child(5){
+    left: calc(60% + 440px);
+}
+.tab-content  .slide .item:nth-child(n + 6){
+    left: calc(60% + 660px);
+    opacity: 0;
+}
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: #eee;
+    transform: translate(0, -50%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* display: none; */
+}
+
+.content .name{
+    font-size: 25px;
+    opacity: 0;
+    background-color: rgba(194, 193, 196, 0.4);
+    text-align: center;
+    animation: animateName 1s ease-in-out forwards;
+    font-weight: 600;
+}
+
+.content .description{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animateDescription 1s ease-in-out 0.3s forwards;
+}
+
+@keyframes animateName{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+        filter: blur(33px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes animateDescription{
+    from{
+        opacity: 0;
+        transform: translateY(100px);
+        filter: blur(33px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.carousel-control-prev-2 {
+    width: 40px;
+    height: 35px;
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    background: var(--bs-primary);
+    border-radius: 50px 0 0 50px;
+    opacity: 1;
+    z-index: 1000;
+    transform: translateY(-50%);
+
+}
+
+.carousel-control-prev-2:hover {
+    border: 2px solid #ff5500;
+    transition: .8s;
+}
+
+.carousel-control-next-2 {
+    width: 40px;
+    height: 35px;
+    position: absolute;
+    top: 77.5%;
+    right: 76%;
+    background: var(--bs-primary);
+    border-radius: 0 50px 50px 0;
+    opacity: 1;
+}
+
+.carousel-control-next-2:hover {
+    border: 2px solid #ff5500;
+    transition: .8s;
+}
+
 
 /*------------------------------------------------------------
 # Blog

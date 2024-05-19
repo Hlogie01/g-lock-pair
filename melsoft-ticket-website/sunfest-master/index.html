@@ -23,85 +23,122 @@
 
 <body>
     <header class="site-header">
-        <div class="header-bar">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-10 col-lg-4">
-                        <h1 class="site-branding flex">
-                            <a href="#">SUNFEST</a>
-                        </h1>
+
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
+                    <li data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Second slide"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="images/carousel-1.jpg" class="img-fluid" alt="First slide">
                     </div>
 
-                    <div class="col-2 col-lg-8">
-                        <nav class="site-navigation">
-                            <div class="hamburger-menu d-lg-none">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div><!-- .hamburger-menu -->
-
-                            <ul>
-                                <li><a href="#">HOME</a></li>
-                                <li><a href="#">SUNFEST 2018</a></li>
-                                <li><a href="#">ARTISTS</a></li>
-                                <li><a href="#">BLOG</a></li>
-                                <li><a href="#">CONTACT</a></li>
-                                <li><a href="#"><i class="fas fa-search"></i></a></li>
-                            </ul><!-- flex -->
-                        </nav><!-- .site-navigation -->
-                    </div><!-- .col-12 -->
-                </div><!-- .row -->
-            </div><!-- container-fluid -->
-        </div><!-- header-bar -->
-    </header><!-- .site-header -->
-
-    <div class="hero-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 offset-lg-2 col-lg-10">
-                    <div class="entry-header">
-                        <h2>Hello world!</h2>
-
-                        <div class="entry-meta-date">
-                            06.28.018
-                        </div><!-- .entry-meta-date -->
-                    </div><!-- .entry-header -->
-
-                    <div class="countdown flex flex-wrap justify-content-between" data-date="2018/06/06">
-                        <div class="countdown-holder">
-                            <div class="dday"></div>
-                            <label>Days</label>
-                        </div><!-- .countdown-holder -->
-
-                        <div class="countdown-holder">
-                            <div class="dhour"></div>
-                            <label>Hours</label>
-                        </div><!-- .countdown-holder -->
-
-                        <div class="countdown-holder">
-                            <div class="dmin"></div>
-                            <label>Minutes</label>
-                        </div><!-- .countdown-holder -->
-
-                        <div class="countdown-holder">
-                            <div class="dsec"></div>
-                            <label>Seconds</label>
-                        </div><!-- .countdown-holder -->
-                    </div><!-- .countdown -->
-                </div><!-- .col-12 -->
-            </div><!-- row -->
-
-            <div class="row">
-                <div class="col-12 ">
-                    <div class="entry-footer">
-                        <a href="#" class="btn">Buy Tickets</a>
-                        <a href="#" class="btn current">See Lineup</a>
+                    <div class="carousel-item">
+                        <video autoplay loop muted playsinline class="hero-video">
+                            <source src="videos/wine-hero-2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
-            </div>
-        </div><!-- .container -->
-    </div><!-- .hero-content -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden"></span>
+                </button>
+            <div class="header-bar">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-10 col-lg-4">
+                            <h1 class="site-branding flex">
+                                <a href="#">G-LOC Events</a>
+                            </h1>
+                        </div>
+    
+                        <div class="col-2 col-lg-8">
+                            <nav class="site-navigation">
+                                <div class="hamburger-menu d-lg-none">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div><!-- .hamburger-menu -->
+    
+                                <ul>
+                                    <li><a href="#">HOME</a></li>
+                                    <li class="dropdown">
+                                        <a href="#">EVENTS</a>
+                                           <div class="dropdown-content">
+                                            <a href="event-tickets.html">Buy Tickets</a>
+                                            <a href="wine-dine.html">Wine & Dine Event</a>
+                                            <a href="burna.html">Burna Boy Concert</a>
+                                           </div>
+                                        </li>
+                                    <li><a href="#">ARTISTS</a></li>
+                                    <li><a href="#">GALLERY</a></li>
+                                    <li><a href="#">CONTACT</a></li>
+                                    <li><a href="#"><i class="fas fa-search"></i></a></li>
+                                </ul><!-- flex -->
+                            </nav><!-- .site-navigation -->
+                        </div><!-- .col-12 -->
+                    </div><!-- .row -->
+                </div><!-- container-fluid -->
+              
+            </div><!-- header-bar -->
+            <div class="hero-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 offset-lg-2 col-lg-10">
+                            <div class="entry-header">
+                                <h2>Wine & Dine <span>Event</span></h2>
+                            </div><!-- .entry-header -->
+        
+                            <div class="countdown flex flex-wrap justify-content-between" data-date="2024/05/25">
+                                <div class="countdown-holder">
+                                    <div class="dday"></div>
+                                    <label>Days</label>
+                                </div><!-- .countdown-holder -->
+        
+                                <div class="countdown-holder">
+                                    <div class="dhour"></div>
+                                    <label>Hours</label>
+                                </div><!-- .countdown-holder -->
+        
+                                <div class="countdown-holder">
+                                    <div class="dmin"></div>
+                                    <label>Minutes</label>
+                                </div><!-- .countdown-holder -->
+        
+                                <div class="countdown-holder">
+                                    <div class="dsec"></div>
+                                    <label>Seconds</label>
+                                </div><!-- .countdown-holder -->
+                            </div><!-- .countdown -->
+                        </div><!-- .col-12 -->
+                    </div><!-- row -->
+        
+                    <div class="row">
+                        <div class="col-12 ">
+                            <div class="entry-footer">
+                                <button type="button" class="button" data-text="Awesome">
+                                    <a href="event-tickets.html"><span class="actual-text">&nbsp;Buy Tickets&nbsp;</span></a>
+                                    <a href="event-tickets.html"><span aria-hidden="true" class="hover-text">&nbsp;Buy Tickets&nbsp;</span></a>
+                                </button>
+                                <button type="button" class="button" data-text="Awesome">
+                                    <a href="ticket.html"><span class="actual-text">&nbsp;Wine & Dine&nbsp;</span></a>
+                                    <a href="ticket.html"><span aria-hidden="true" class="hover-text">&nbsp;Wine & Dine&nbsp;</span></a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .container -->
+            </div><!-- .hero-content -->
+    </div><!-- hero-video -->
+    </header><!-- .site-header -->
 
     <div class="content-section">
         <div class="container">
