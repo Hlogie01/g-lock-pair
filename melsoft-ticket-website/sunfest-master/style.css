@@ -1184,7 +1184,7 @@ body {
 # about-us
 ------------------------------------------------------------*/
 .about-us {
-  background: url("images/about-us-background.jpg") no-repeat;
+
   width: 100%;
   height: 100%;
 }
@@ -1214,8 +1214,9 @@ body {
 }
 
 .about-us .page-header {
-  background: url("images/about-us-header-background.jpg") no-repeat;
+  background: url("./images/people2.jpeg") no-repeat;
   background-size: cover;
+  height: 600px;
 }
 
 .page-header .entry-title {
@@ -1350,11 +1351,11 @@ body {
   position: relative;
   background-image: linear-gradient(
     to bottom,
-    #0196bf,
-    #00a0bc,
-    #00a9b3,
-    #00b1a4,
-    #1bb791
+    rgb(210, 137, 0),
+    rgb(235, 153, 0),
+    rgb(182, 119, 0),
+    orange,
+    rgb(201, 131, 0)
   );
 }
 
@@ -2675,4 +2676,186 @@ s
   display: grid;
   place-content: center;
   background: #fff;
+}
+/*-------------------------------------------------------------------------*/
+.field .error {
+  text-align: left;
+  margin: -5px 0 10px ;
+  }
+  
+  .error {
+      color: rgba(185, 0, 0, 0.666);
+     font-size: 14px;
+     margin-bottom: 0;
+     display: none;
+      
+  }
+  
+  .send-button {
+      border: 1px solid orange;
+  }
+  
+  .send-button {
+      border: none;
+  }
+  
+  .contact-icon {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: transform .2s ease-in-out;
+  }
+  
+  .contact-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.339);
+  }
+
+
+  /*-----------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------
+# contact-page
+------------------------------------------------------------*/
+.contact-page {
+  background: url("../sunfest-master/images/crowd2.jpeg") no-repeat; /*--------------------------background images*/
+}
+
+/*------------------------------------------------------------
+# site-header
+------------------------------------------------------------*/
+.contact-page .page-header {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.557), rgba(0, 0, 0, 0.8)), url("../sunfest-master/images/crowd.jpeg") no-repeat;
+  background-size: cover;
+  height: 700px;
+}
+
+.contact-page .main-content {
+  background: #fff;
+  box-shadow: 13px 14px 68px rgba(166, 125, 48, 0.62);
+  border-radius: 0px 30px;
+}
+
+.contact-page-map {
+  width: 100%;
+}
+
+.contact-page-map iframe {
+  width: 100%;
+  height: 660px;
+}
+
+.contact-page .contact-details {
+  margin-top: 70px;
+}
+
+.contact-page .contact-details .contact-medium {
+  padding: 0 20px;
+}
+
+.contact-page .contact-details .contact-medium .contact-icon {
+  padding: 0;
+  margin-right: 20px;
+}
+
+.contact-page .contact-details .contact-medium .contact-icon img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contact-page .contact-details .contact-medium .entry-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #040608;
+}
+
+.contact-page .contact-details .contact-medium .entry-content {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #989898;
+}
+
+.contact-page .get-in-touch {
+  margin-top: 115px;
+  padding: 0 15px;
+}
+
+
+@media screen and (min-width: 992px) {
+  .contact-page .get-in-touch {
+      padding: 0 100px;
+  }
+}
+
+.contact-page .get-in-touch .entry-header {
+  text-align: center;
+}
+
+.contact-page .get-in-touch .entry-title p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #989898;
+  margin: 0;
+}
+
+.contact-page .get-in-touch .entry-title h2 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #050505;
+  margin: 5px 0 0;
+}
+
+.contact-page .get-in-touch .entry-content {
+  margin-top: 45px;
+}
+
+.contact-page .get-in-touch .entry-content p {
+  font-size: 15px;
+  color: #989898;
+  line-height: 2;
+  text-align: center;
+}
+
+.contact-page .main-content .get-in-touch .contact-form {
+  margin-top: 120px;
+}
+
+.contact-page .contact-form input[type="text"],
+.contact-page .contact-form input[type="email"],
+.contact-page .contact-form textarea {
+  width: 100%;
+  padding: 14px 22px;
+  margin-bottom: 30px;
+  border: 0;
+  background: #f4f6f7;
+  color: #050505;
+  outline: none;
+}
+
+.contact-page .contact-form input[type="text"]::placeholder,
+.contact-page .contact-form input[type="email"]::placeholder,
+.contact-page .contact-form textarea::placeholder {
+  color: #33333355;
+  font-style: italic;
+}
+
+.contact-page .contact-form .submit {
+  margin-top: 15px;
+  margin-bottom: 120px;
+}
+
+.contact-page .contact-form .submit .btn {
+  padding: 15px 30px;
+  margin-right: 20px;
+  border-radius: 0;
+  font-weight: 600;
+  background: -webkit-linear-gradient(rgb(191, 124, 0), orange);
+ 
+}
+
+.contact-page .contact-form .submit .btn:hover {
+  background: -webkit-linear-gradient( orange, rgb(138, 90, 0));
 }
