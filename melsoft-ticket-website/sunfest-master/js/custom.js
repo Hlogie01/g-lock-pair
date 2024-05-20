@@ -80,7 +80,7 @@
 
     $(".clear-ticket-count").on( 'click', function() {
         var $count = $('.ticket-count');
-        $count.val('1');
+        $count.val('0');
     });
 
     // Tabs

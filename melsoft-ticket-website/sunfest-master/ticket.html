@@ -9,7 +9,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -124,51 +124,47 @@
                                     <h1 class="heading"><span>Ticket</span> Plan</h1>
                                     <div class="box-container">
                                         <!-- Free Ticket -->
-                                        <div class="box">
-                                            <h3 class="title">Free</h3>
-                                            <h3 class="amount">R0.00 | Code</h3>
+                                        <div class="box" id="box1">
+                                            <h3 class="title" id="title">Free</h3>
+                                            <h3 class="amount" id="amount">R0.00 | Code</h3>
                                             <ul>
                                                 <li><i class="fas fa-check">1 glass of wine</i></li>
-                                                <li><i class="fas fa-check">Platter of finger foods</i></li>
+                                                <li><i class="fas fa-check">1 platter of finger food/cocktail dishes</i></li>
                                                 <li><i class="fas fa-check">Complimentary event gift package</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                              <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                              <div class="clear-ticket-count btn-ticket">Clear</div>
+                                              <input type="submit" onclick="addToCart(box1)" id="add-to-cart-button-1" value="Buy Ticket" class="btn-ticket">
                                             </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
+                                            <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
                                         </div>
                                         <!-- General Ticket -->
-                                        <div class="box">
+                                        <div class="box" id="box2">
                                             <h3 class="title">General</h3>
                                             <h3 class="amount">R350.00</h3>
                                             <ul>
                                                 <li><i class="fas fa-check">1 glass of wine</i></li>
                                                 <li><i class="fas fa-check">A starter & main meal</i></li>
-                                                <li><i class="fas fa-check">Free pictures/tour around Nirox Sculpture Park</i></li>
+                                                <li><i class="fas fa-check">Free pictures/tour around Nirox</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                                <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                                <div class="clear-ticket-count btn-ticket">Clear</div>
+                                                <input type="submit" onclick="addToCart(box2)" id="add-to-cart-button-2" value="Buy Ticket" class="btn-ticket">
                                               </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
                                         </div>
                                         <!-- Silver Ticket -->
-                                        <div class="box">
+                                        <div class="box" id="box3">
                                             <h3 class="title">Silver</h3>
                                             <h3 class="amount">R500.00</h3>
                                             <ul>
@@ -177,39 +173,35 @@
                                                 <li><i class="fas fa-check">Exclusive invitation to winemaker's luncheon</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                                <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                                <div class="clear-ticket-count btn-ticket">Clear</div>
+                                                <input type="submit" onclick="addToCart(box3)" name="" value="Buy Ticket" class="btn-ticket">
                                               </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
                                         </div>
                                         <!-- Gold Ticket -->
-                                        <div class="box">
+                                        <div class="box" id="box4">
                                             <h3 class="title">Gold</h3>
                                             <h3 class="amount">R750.00</h3>
                                             <ul>
                                                 <li><i class="fas fa-check">3 course meal</i></li>
-                                                <li><i class="fas fa-check">VIP lounge access/premium wine selection</i></li>
-                                                <li><i class="fas fa-check">Priority access and discounts to limited edition/rare wine</i></li>
+                                                <li><i class="fas fa-check">VIP lounge access</i></li>
+                                                <li><i class="fas fa-check">Priority access/discounts to rare wine</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                                <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                                <div class="clear-ticket-count btn-ticket">Clear</div>
+                                                <input type="submit" onclick="addToCart(box4)" name="" value="Buy Ticket" class="btn-ticket">
                                               </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
                                         </div>
                                     </div>
                     
@@ -507,8 +499,18 @@
                                 </section><!-- ticket design section -->                         
                             </div><!-- .tab-content -->
 
+
                         </div><!-- .tabs-container -->
                     </div><!-- .tabs -->
+                    <div class="cart" id="cart">
+                        <div class="title">YOUR TICKET CART</div>
+                        <hr/>
+                        <div id="cart-items"></div>
+                        <div class="total" id="total-amount">Total Amount: R0.00</div>
+                        <input type="submit" id="checkout-button" value="Checkout" class="btn-checkout">
+
+                    </div>
+
                 </div><!-- .col-12 -->
             </div><!-- .row -->
 
@@ -562,5 +564,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script type='text/javascript' src='js/circle-progress.min.js'></script>
     <script type='text/javascript' src='js/jquery.countTo.min.js'></script>
     <script type='text/javascript' src='js/custom.js'></script>
+    <script src="js/ticket.js"></script>
 </body>
 </html>
