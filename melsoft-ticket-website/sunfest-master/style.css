@@ -1133,8 +1133,12 @@ body {
     background-size: cover;
 }
 
+
+
 .about-us .page-header {
-  background: url("images/about-us-header-background.jpg") no-repeat;
+  background:url("./images/crowd.jpeg") no-repeat;/*-------------------------------------*/
+  height: 500px;
+
   background-size: cover;
 }
 
@@ -1160,7 +1164,7 @@ body {
 }
 
 .page-header .breadcrumbs li::after {
-  content: "/";
+  content: '/';
   position: absolute;
   top: 3px;
   right: 0;
