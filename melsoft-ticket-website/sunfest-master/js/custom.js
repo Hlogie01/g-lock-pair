@@ -80,7 +80,7 @@
 
     $(".clear-ticket-count").on( 'click', function() {
         var $count = $('.ticket-count');
-        $count.val('1');
+        $count.val('0');
     });
 
     // Tabs
@@ -210,3 +210,29 @@
     }
 
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function() {
+    const carouselItems = document.querySelectorAll(".carousel-item");
+    let currentIndex = 0;
+
+    function showItem(index) {
+        carouselItems.forEach(item => item.classList.remove("active"));
+        carouselItems[index].classList.add("active");
+    }
+
+    function next() {
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        showItem(currentIndex);
+    }
+
+    function prev() {
+        currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+        showItem(currentIndex);
+    }
+
+    document.querySelector(".carousel-control-prev").addEventListener("click", prev);
+    document.querySelector(".carousel-control-next").addEventListener("click", next);
+
+    // Start autoplay if needed
+    // const intervalId = setInterval(next, 5000);
+});
