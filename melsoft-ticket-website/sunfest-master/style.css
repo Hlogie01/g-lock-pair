@@ -362,30 +362,33 @@ body {
 }
 
 .hero-content .entry-header h2 {
-    font-family: mountains;
-    font-size: 40px;
-    background: -webkit-linear-gradient(#ff5f00, #ff5f00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block; 
+  margin: 0;
+  font-family: mountains;
+  font-size: 40px;
+  background: -webkit-linear-gradient(#ff5f00, #ff5f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
-.hero-content .entry-header h2 span{
-    padding: 25px;
-    font-family: mountains;
-    background: -webkit-linear-gradient(#ff5500, #ff5f00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block; 
-    vertical-align: bottom;
+.hero-content .entry-header h2 span {
+  padding: 25px;
+  margin: 0;
+  font-family: mountains;
+  font-size: 40px;
+  background: -webkit-linear-gradient(#ff5f00, #ff5f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .hero-content .entry-header .entry-meta-date {
   position: absolute;
   width: 100%;
-  top: 40px;
+  top: 20px;
   font-family: "Poppins", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   color: hsl(0, 0%, 90%);
   text-align: center;
@@ -409,7 +412,7 @@ body {
 ## countdown
 ------------------------------------------------------------*/
 .countdown {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .countdown-holder {
@@ -422,10 +425,11 @@ body {
 .countdown-holder .dmin,
 .countdown-holder .dsec {
     display: block;
-    font-size: 72px;
+    font-size: 62px;
     font-weight: 600;
     line-height: 1;
     color:#ff5f00;
+    margin-top: 20px;
 }
 
 .countdown-holder label {
