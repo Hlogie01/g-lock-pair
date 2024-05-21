@@ -1,5 +1,3 @@
-
-
 // Increase ticket quantity when the corresponding button is clicked
 document.querySelectorAll('.increase-ticket').forEach(button => {
     button.addEventListener('click', function() {

@@ -74,10 +74,11 @@
                                         <a href="ticket.html">Wine & Dine Event</a>
                                         <a href="burna.html">Burna Boy Concert</a>
                                         <a href="trevor.html">Trevor Noah Tour</a>
+                                        <a href="cottonfest.html">Cotton Fest 2024</a>
                                        </div>
                                     </li>
                                 <li><a href="index.html#artists-homepage-section">ARTISTS</a></li>
-                                <li><a href="#">BLOG</a></li>
+                                <li><a href="#">GALLERY</a></li>
                                 <li><a href="#">CONTACT</a></li>
                                 <li><a href="#"><i class="fas fa-search"></i></a></li>
                             </ul><!-- flex -->
@@ -298,96 +299,88 @@
                             </div><!-- .tab-content -->
 
                             <div id="tab_organizers" class="tab-content">
-                                <section class="price">
+                                <section id="trevor-noah" class="price">
                                     <h1 class="heading"><span>Ticket</span> Plan</h1>
                                     <div class="box-container">
-                                        <!-- General Ticket -->
-                                        <div class="box">
+                                       <!-- General Ticket -->
+                                        <div class="box" id="box9">
                                             <h3 class="title">General</h3>
-                                            <h3 class="amount">R0.00</h3>
+                                            <h3 class="amount">R400.00</h3>
                                             <ul>
-                                                <li><i class="fas fa-check">A</i></li>
-                                                <li><i class="fas fa-check">B</i></li>
-                                                <li><i class="fas fa-check">C</i></li>
+                                                <li><i class="fas fa-check">Express entry to venue</i></li>
+                                                <li><i class="fas fa-check">Early access to photo booth</i></li>
+                                                <li><i class="fas fa-check">Trevor Noah signed merchandise</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                              <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                              <div class="clear-ticket-count btn-ticket">Clear</div>
-                                            </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
+                                                <input type="submit" onclick="addToCart(box9)" id="add-to-cart-button-9" value="Buy Ticket" class="btn-ticket">
+                                              </div>
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
                                         </div>
                                         <!-- Silver Ticket -->
-                                        <div class="box">
+                                        <div class="box" id="box10">
                                             <h3 class="title">Silver</h3>
-                                            <h3 class="amount">R0.00</h3>
+                                            <h3 class="amount">R550.00</h3>
                                             <ul>
-                                                <li><i class="fas fa-check">A</i></li>
-                                                <li><i class="fas fa-check">B</i></li>
-                                                <li><i class="fas fa-check">C</i></li>
+                                                <li><i class="fas fa-check">Exclusive tour merch</i></li>
+                                                <li><i class="fas fa-check">Complimentary gift package</i></li>                                               
+                                                <li><i class="fas fa-check">Travel Bus transportation to venue</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                                <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                                <div class="clear-ticket-count btn-ticket">Clear</div>
+                                                <input type="submit" onclick="addToCart(box10)" id="add-to-cart-button-10" value="Buy Ticket" class="btn-ticket">
                                               </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
-                                        </div>
-                                        <!-- Platinum Ticket -->
-                                        <div class="box">
-                                            <h3 class="title">Platinum</h3>
-                                            <h3 class="amount">R0.00</h3>
-                                            <ul>
-                                                <li><i class="fas fa-check">A</i></li>
-                                                <li><i class="fas fa-check">B</i></li>
-                                                <li><i class="fas fa-check">C</i></li>
-                                            </ul>
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                                <div class="clear-ticket-count btn-ticket">Clear</div>
-                                              </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
                                         </div>
                                         <!-- Gold Ticket -->
-                                        <div class="box">
+                                        <div class="box" id="box11">
                                             <h3 class="title">Gold</h3>
-                                            <h3 class="amount">R0.00</h3>
+                                            <h3 class="amount">R850.00</h3>
                                             <ul>
-                                                <li><i class="fas fa-check">A</i></li>
-                                                <li><i class="fas fa-check">B</i></li>
-                                                <li><i class="fas fa-check">C</i></li>
+                                                <li><i class="fas fa-check">Access to private bar</i></li>
+                                                <li><i class="fas fa-check">Premium Seating</i></li>
+                                                <li><i class="fas fa-check">Priority entrance to concert venue</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                                <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                                <div class="clear-ticket-count btn-ticket">Clear</div>
+                                                <input type="submit" onclick="addToCart(box11)" id="add-to-cart-button-11" value="Buy Ticket" class="btn-ticket">
                                               </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
+                                        </div>
+                                        <!-- Platinum Ticket -->
+                                        <div class="box" id="box12">
+                                            <h3 class="title">Platinum</h3>
+                                            <h3 class="amount">R1500.00</h3>
+                                            <ul>                                              
+                                                <li><i class="fas fa-check">Trevor Noah meet and greet</i></li>
+                                                <li><i class="fas fa-check">VIP lounge access</i></li>
+                                                <li><i class="fas fa-check">Exclusive backstage tour</i></li>
+                                            </ul>
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <input type="submit" onclick="addToCart(box12)" id="add-to-cart-button-12" value="Buy Ticket" class="btn-ticket">
+                                              </div>
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
                                         </div>
                                     </div>
                     
@@ -395,96 +388,88 @@
                             </div><!-- .tab-content -->
 
                             <div id="tab_about" class="tab-content">
-                                <section class="price">
+                                <section id="cotton-fest" class="price">
                                     <h1 class="heading"><span>Ticket</span> Plan</h1>
                                     <div class="box-container">
                                         <!-- General Ticket -->
-                                        <div class="box">
+                                        <div class="box" id="box13">
                                             <h3 class="title">General</h3>
-                                            <h3 class="amount">R0.00</h3>
+                                            <h3 class="amount">R200.00</h3>
                                             <ul>
-                                                <li><i class="fas fa-check">A</i></li>
-                                                <li><i class="fas fa-check">B</i></li>
-                                                <li><i class="fas fa-check">C</i></li>
+                                                <li><i class="fas fa-check">Entry to the event</i></li>
+                                                <li><i class="fas fa-check">General access to food and drinks</i></li>
+                                                <li><i class="fas fa-check">Free Cotton Fest wristband</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                              <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                              <div class="clear-ticket-count btn-ticket">Clear</div>
-                                            </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
+                                                <input type="submit" onclick="addToCart(box13)" id="add-to-cart-button-13" value="Buy Ticket" class="btn-ticket">
+                                              </div>
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
                                         </div>
                                         <!-- Silver Ticket -->
-                                        <div class="box">
+                                        <div class="box" id="box14">
                                             <h3 class="title">Silver</h3>
-                                            <h3 class="amount">R0.00</h3>
+                                            <h3 class="amount">R350.00</h3>
                                             <ul>
-                                                <li><i class="fas fa-check">A</i></li>
-                                                <li><i class="fas fa-check">B</i></li>
-                                                <li><i class="fas fa-check">C</i></li>
+                                                <li><i class="fas fa-check">Entry to the event</i></li>
+                                                <li><i class="fas fa-check">General access to food and drinks</i></li>                                               
+                                                <li><i class="fas fa-check">Priority access to merchandise</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                                <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                                <div class="clear-ticket-count btn-ticket">Clear</div>
+                                                <input type="submit" onclick="addToCart(box14)" id="add-to-cart-button-14" value="Buy Ticket" class="btn-ticket">
                                               </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
-                                        </div>
-                                        <!-- Platinum Ticket -->
-                                        <div class="box">
-                                            <h3 class="title">Platinum</h3>
-                                            <h3 class="amount">R0.00</h3>
-                                            <ul>
-                                                <li><i class="fas fa-check">A</i></li>
-                                                <li><i class="fas fa-check">B</i></li>
-                                                <li><i class="fas fa-check">C</i></li>
-                                            </ul>
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                                <div class="clear-ticket-count btn-ticket">Clear</div>
-                                              </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
                                         </div>
                                         <!-- Gold Ticket -->
-                                        <div class="box">
+                                        <div class="box" id="box15">
                                             <h3 class="title">Gold</h3>
-                                            <h3 class="amount">R0.00</h3>
+                                            <h3 class="amount">R460.00</h3>
                                             <ul>
-                                                <li><i class="fas fa-check">A</i></li>
-                                                <li><i class="fas fa-check">B</i></li>
-                                                <li><i class="fas fa-check">C</i></li>
+                                                <li><i class="fas fa-check">Free complimentary Cotton Fest Merch</i></li>
+                                                <li><i class="fas fa-check">VIP access to after party</i></li>
+                                                <li><i class="fas fa-check">Priority entrance to concert venue</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                                <input type="submit" name="" value="Buy Ticket" class="btn-ticket">
-                                                <div class="clear-ticket-count btn-ticket">Clear</div>
+                                                <input type="submit" onclick="addToCart(box15)" id="add-to-cart-button-15" value="Buy Ticket" class="btn-ticket">
                                               </div>
-                                            <div class="flex align-items-center">
-                                                <div class="number-of-tickets flex justify-content-center align-items-center">
-                                                    <span class="decrease-ticket">-</span>
-                                                    <input type="number" name="" value="0" class="ticket-count">
-                                                    <span class="increase-ticket">+</span>
-                                                </div><!-- number-of-tickets -->
-                    
-                                            </div><!--flex / ticket count -->
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
+                                        </div>
+                                        <!-- Platinum Ticket -->
+                                        <div class="box" id="box16">
+                                            <h3 class="title">Platinum</h3>
+                                            <h3 class="amount">R600.00</h3>
+                                            <ul>                                              
+                                                <li><i class="fas fa-check">Meet and greet with our artists</i></li>
+                                                <li><i class="fas fa-check">VIP access to event</i></li>
+                                                <li><i class="fas fa-check">Exclusive backstage tour</i></li>
+                                            </ul>
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <input type="submit" onclick="addToCart(box16)" id="add-to-cart-button-16" value="Buy Ticket" class="btn-ticket">
+                                              </div>
+                                              <select class="select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                              </select>
                                         </div>
                                     </div>
                     
