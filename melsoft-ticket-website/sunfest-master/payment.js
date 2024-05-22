@@ -18,7 +18,7 @@ class PaymentForm {
     // Validation methods
     validateCardNumber() {
         this.cardNumberInput.value = this.cardNumberInput.value.replace(/\D/g, ''); // Remove non-numeric characters
-        var cardNumber = this.cardNumberInput.value;
+        let cardNumber = this.cardNumberInput.value;
         if (cardNumber.length < 16) {
             this.cardNumberInput.classList.add("input-error");
             this.cardNumberInput.classList.remove("input-success");
@@ -37,7 +37,7 @@ class PaymentForm {
     }
 
     formatExpiryDate() {
-        var expiryDate = this.expiryDateInput.value;
+        let expiryDate = this.expiryDateInput.value;
         expiryDate = expiryDate.replace(/\D/g, ''); // Remove non-numeric characters
         if (expiryDate.length >= 2 && expiryDate.charAt(1) !== '/') {
             expiryDate = expiryDate.slice(0, 2) + '/' + expiryDate.slice(2);
@@ -49,7 +49,7 @@ class PaymentForm {
     onSubmit(event) {
         event.preventDefault();
         // Perform form validation
-        var cardNumber = this.cardNumberInput.value;
+        let cardNumber = this.cardNumberInput.value;
         if (cardNumber.length < 16) {
             alert("Please enter a valid card number.");
             this.cardNumberInput.focus();
@@ -71,12 +71,12 @@ class PaymentForm {
 
     // Loader methods
     showLoader() {
-        var loader = document.getElementById("loader");
+        let loader = document.getElementById("loader");
         loader.style.display = "block";
     }
 
     hideLoader() {
-        var loader = document.getElementById("loader");
+        let loader = document.getElementById("loader");
         loader.style.display = "none";
     }
 }
