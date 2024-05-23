@@ -29,20 +29,3 @@ for (let i = 0; i < countElements.length; i++) {
   counters.push(new Counter(countElements[i]));
 }
 
-const videos = document.querySelectorAll('.video');
-
-for (let i = 0; i < videos.length; i++) {
-  videos[i].addEventListener('loadedmetadata', () => {
-    const width = videos[i].videoWidth;
-    const height = videos[i].videoHeight;
-    const aspectRatio = width / height;
-
-    if (width > height) {
-      videos[i].style.width = '33.33%';
-      videos[i].style.height = 'auto';
-    } else {
-      videos[i].style.width = 'auto';
-      videos[i].style.height = '33.33vh';
-    }
-  });
-}
