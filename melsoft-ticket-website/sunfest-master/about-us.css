@@ -93,6 +93,11 @@
   }
 
   hr {
-    width: 65%;
+    width: 50%;
     border: 2px solid orange;
+    margin-top: 50px;
+  }
+
+  body {
+    background-color: rgb(255, 247, 234);
   }
