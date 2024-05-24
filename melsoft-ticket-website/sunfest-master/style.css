@@ -1714,6 +1714,92 @@ body {
     color: #ff2630;
 }
 
+/* CSS for blurred effect */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none; /* Prevents interaction with blurred element */
+}
+
+.unlock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 1.5em;
+  pointer-events: none; /* Prevents interaction with the overlay */
+}
+
+/* Ensure the parent container takes full width */
+.promo-code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; /* Add some margin if needed */
+}
+
+/* Center the elements within the promo-box */
+.promo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Add some space between the input and the button */
+  border-bottom: 3px solid #ff5500;
+  margin: 15px 0;
+}
+
+.promo-box p{
+  color: red;
+  display: none;
+  width: 50%;
+}
+
+.promo-box label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.promo-box input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #000000;
+}
+
+.promo-box input:focus ~ label,
+.promo-box input:valid ~ label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.btn-code{
+  border-radius: 25px;
+  width: 70%;
+  padding: 6px;
+  margin-bottom: 15px;
+}
+
+.btn-code:hover{
+  color: #ff5500;
+  border: 3px solid #ff5f00;
+}
+
 /*------------------------------------------------------------
 # Tickets Page Ticket Purchasing
 ------------------------------------------------------------*/

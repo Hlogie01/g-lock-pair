@@ -85,6 +85,18 @@ document.querySelectorAll('.decrease-ticket').forEach(button => {
 let addItemId = 0; // Counter for unique IDs of added items
 const user = new User('John Doe'); // Example user
 
+function validatePromoCode() {
+    const promoCodeInput = document.getElementById('promo-code').value;
+    if (promoCodeInput === 'GLOC-2024') {
+        document.getElementById('add-to-cart-button-1').disabled = false;
+        document.getElementById('promo-code-message').style.display = 'none';
+        document.getElementById('box1').classList.remove('blurred');
+        document.getElementById('unlock-overlay').style.display = 'none';
+    } else {
+        document.getElementById('promo-code-message').style.display = 'block';
+    }
+}
+
 function addToCart(itemElement) {
     const emptyCartMessage = document.getElementById('empty-cart-message');
     if (emptyCartMessage) {
