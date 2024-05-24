@@ -236,3 +236,8 @@ document.addEventListener("DOMContentLoaded", function() {
     // Start autoplay if needed
     // const intervalId = setInterval(next, 5000);
 });
+
+
+
+
+

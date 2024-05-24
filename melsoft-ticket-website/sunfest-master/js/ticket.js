@@ -1,97 +1,161 @@
-// Increase ticket quantity when the corresponding button is clicked
+// Defining the classes
+class Event {
+    constructor(name, date) {
+        this.name = name;
+        this.date = date;
+        this.tickets = [];
+    }
+
+    addTicket(ticket) {
+        this.tickets.push(ticket);
+    }
+}
+
+class Ticket {
+    constructor(id, event, price, quantity = 0) {
+        this.id = id;
+        this.event = event;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    increaseQuantity() {
+        this.quantity++;
+    }
+
+    decreaseQuantity() {
+        if (this.quantity > 0) {
+            this.quantity--;
+        }
+    }
+}
+
+class User {
+    constructor(name) {
+        this.name = name;
+        this.cart = [];
+        this.totalAmount = 0;
+    }
+
+    addToCart(ticket) {
+        this.cart.push(ticket);
+        this.updateTotalAmount();
+    }
+
+    removeFromCart(ticketId) {
+        const ticketIndex = this.cart.findIndex(ticket => ticket.id === ticketId);
+        if (ticketIndex > -1) {
+            this.totalAmount -= this.cart[ticketIndex].price * this.cart[ticketIndex].quantity;
+            this.cart.splice(ticketIndex, 1);
+            this.updateTotalAmount();
+        }
+    }
+
+    updateTotalAmount() {
+        this.totalAmount = this.cart.reduce((sum, ticket) => sum + ticket.price * ticket.quantity, 0);
+        this.displayTotalAmount();
+    }
+
+    displayTotalAmount() {
+        document.getElementById('total-amount').textContent = 'Total Amount: R' + this.totalAmount.toFixed(2);
+    }
+}
+
+// Updating event handlers and logic
 document.querySelectorAll('.increase-ticket').forEach(button => {
     button.addEventListener('click', function() {
-        // Get the input field for ticket quantity
         const ticketCountInput = this.previousElementSibling;
-        // Increment the ticket quantity by 1
-        ticketCountInput.value = parseInt(ticketCountInput.value) + 1;
+        const ticketId = ticketCountInput.dataset.ticketId;
+        const ticket = tickets.find(t => t.id === ticketId);
+        ticket.increaseQuantity();
+        ticketCountInput.value = ticket.quantity;
     });
 });
 
-// Decrease ticket quantity when the corresponding button is clicked
 document.querySelectorAll('.decrease-ticket').forEach(button => {
     button.addEventListener('click', function() {
-        // Get the input field for ticket quantity
         const ticketCountInput = this.nextElementSibling;
-        // Decrease the ticket quantity by 1 if it's greater than 0
-        if (ticketCountInput.value > 0) {
-            ticketCountInput.value = parseInt(ticketCountInput.value) - 1;
-        }
+        const ticketId = ticketCountInput.dataset.ticketId;
+        const ticket = tickets.find(t => t.id === ticketId);
+        ticket.decreaseQuantity();
+        ticketCountInput.value = ticket.quantity;
     });
 });
 
-// Add to cart function
 let addItemId = 0; // Counter for unique IDs of added items
-let totalAmount = 0; // Total amount of all items in the cart
+const user = new User('John Doe'); // Example user
 
-function addToCart(item) {
-    // Remove the empty cart message if it exists
-    let emptyCartMessage = document.getElementById('empty-cart-message');
+function addToCart(itemElement) {
+    const emptyCartMessage = document.getElementById('empty-cart-message');
     if (emptyCartMessage) {
         emptyCartMessage.remove();
     }
 
-    // Create a new div for the selected item
-    let selectedItem = document.createElement('div');
-    selectedItem.classList.add('box');
-    selectedItem.setAttribute('id', 'item-' + addItemId++); // Assign a unique ID to the item
+    const title = itemElement.querySelector('.title').textContent;
+    const amountText = itemElement.querySelector('.amount').textContent;
+    const amount = parseFloat(amountText.replace(/[^\d.-]/g, ''));
+    const selectElement = itemElement.querySelector('select');
+    const selectedQuantity = parseInt(selectElement.options[selectElement.selectedIndex].text);
 
-    // Get the title of the ticket
-    let h3Title = document.createElement('h3');
-    h3Title.textContent = item.querySelector('.title').textContent;
+    const ticket = new Ticket(addItemId++, title, amount, selectedQuantity);
+    user.addToCart(ticket);
+
+    const selectedItem = document.createElement('div');
+    selectedItem.classList.add('box');
+    selectedItem.setAttribute('id', 'item-' + ticket.id);
+
+
+
+    // Determine the event and add the appropriate title
+    let eventTitleText;
+    if (itemElement.closest('#tab_details')) {
+        eventTitleText = 'Wine & Dine Event';
+    } else if (itemElement.closest('#tab_venue')) {
+        eventTitleText = 'Burna Boy Event';
+    } else if (itemElement.closest('#tab_organizers')) {
+        eventTitleText = 'Trevor Noah Event';
+    } else if (itemElement.closest('#tab_about')) {
+        eventTitleText = 'Cotton Fest 2024 Event';
+    }
+
+    if (eventTitleText) {
+        const eventTitle = document.createElement('h3');
+        eventTitle.textContent = eventTitleText;
+        eventTitle.classList.add('event-title'); // Add a class for styling if needed
+        selectedItem.appendChild(eventTitle);
+    }
+
+    const h3Title = document.createElement('h3');
+    h3Title.textContent = title;
     selectedItem.appendChild(h3Title);
 
-    // Get the amount of the ticket
-    let h3Amount = document.createElement('h3');
-    let itemAmountText = item.querySelector('.amount').textContent;
-    let itemAmount = parseFloat(itemAmountText.replace(/[^\d.-]/g, '')); // Extract the numerical value
-    h3Amount.textContent = itemAmountText;
+    const h3Amount = document.createElement('h3');
+    h3Amount.textContent = amountText;
     selectedItem.appendChild(h3Amount);
 
-    // Get the selected quantity from the dropdown
-    let selectElement = item.querySelector('select');
-    let selectedQuantity = selectElement.options[selectElement.selectedIndex].text;
-    let h3Quantity = document.createElement('h3');
+    const h3Quantity = document.createElement('h3');
     h3Quantity.textContent = 'Quantity: ' + selectedQuantity;
     selectedItem.appendChild(h3Quantity);
 
-    // Calculate the total for this item and update the overall total amount
-    let itemTotal = itemAmount * selectedQuantity;
-    totalAmount += itemTotal;
-    updateTotalAmount();
-
-    // Add a delete button to remove the item
-    let deleteButton = document.createElement('button');
+    const deleteButton = document.createElement('button');
     deleteButton.textContent = 'X';
     deleteButton.classList.add('delete-button');
     deleteButton.onclick = function() {
-        // Subtract the item total from the overall total amount
-        totalAmount -= itemTotal;
+        user.removeFromCart(ticket.id);
         selectedItem.remove();
-        // Show empty cart message if no items left in the cart
-        if (document.getElementById('cart-items').children.length === 0) {
-            totalAmount = 0;
+        if (user.cart.length === 0) {
             showEmptyCartMessage();
         }
-        updateTotalAmount(); // Update the displayed total amount
     };
     selectedItem.appendChild(deleteButton);
 
-    // Append the selected item to the cart
-    let cartItems = document.getElementById('cart-items');
-    cartItems.append(selectedItem);
+    const cartItems = document.getElementById('cart-items');
+    cartItems.appendChild(selectedItem);
 }
 
-// Update the displayed total amount
-function updateTotalAmount() {
-    let totalElement = document.getElementById('total-amount');
-    totalElement.textContent = 'Total Amount: R' + totalAmount.toFixed(2);
-}
-
-// Show empty cart message when the cart is empty
 function showEmptyCartMessage() {
-    let cartItems = document.getElementById('cart-items');
-    let emptyCartMessage = document.createElement('div');
+    const cartItems = document.getElementById('cart-items');
+    const emptyCartMessage = document.createElement('div');
     emptyCartMessage.id = 'empty-cart-message';
     emptyCartMessage.textContent = 'Your cart is empty';
     cartItems.appendChild(emptyCartMessage);
@@ -105,3 +169,5 @@ document.getElementById("checkout-button").addEventListener("click", function() 
     // Redirect to the payment page
     window.location.href = "payment.html";
 });
+
+
