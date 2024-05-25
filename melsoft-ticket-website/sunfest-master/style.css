@@ -1972,12 +1972,14 @@ body {
 .total {
   font-weight: bold;
   margin-top: 20px;
+  color: #686767;
+
 }
 
 #empty-cart-message {
   text-align: center;
   font-size: 1.2em;
-  color: #888;
+  color: #686767;
 }
 
 .delete-button {
