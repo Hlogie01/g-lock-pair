@@ -1474,6 +1474,23 @@ body {
     z-index: -1; /* Send video to the background */
 }
 
+.ticket-video {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* Adjust height as needed */
+  overflow: hidden; /* Ensure video doesn't overflow */
+}
+
+.ticket-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure video covers entire container */
+  z-index: -1; /* Send video to the background */
+}
+
 /*------------------------------------------------------------
 # Page Header
 ------------------------------------------------------------*/
