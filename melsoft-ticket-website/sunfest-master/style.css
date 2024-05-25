@@ -1802,25 +1802,25 @@ body {
 }
 
 /* Ensure the parent container takes full width */
-.promo-code-container {
+/* .promo-code-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 20px; /* Add some margin if needed */
-}
+  margin-top: 20px; 
+} */
 
 /* Center the elements within the promo-box */
-.promo-box {
+/* .promo-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Add some space between the input and the button */
+  gap: 10px; 
   border-bottom: 3px solid #ff5500;
   margin: 15px 0;
-}
+} */
 
-.promo-box p{
+/* .promo-box p{
   color: red;
   display: none;
   width: 50%;
@@ -1864,7 +1864,7 @@ body {
 .btn-code:hover{
   color: #ff5500;
   border: 3px solid #ff5f00;
-}
+} */
 
 /*------------------------------------------------------------
 # Tickets Page Ticket Purchasing
@@ -1968,6 +1968,14 @@ body {
 
 
 /* Cart */
+.cart-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; /* Add some margin if needed */
+}
+
 .cart{
   width: 120%;
   float: right;

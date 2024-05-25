@@ -10,12 +10,41 @@
 
     var countdown_date = $('.countdown').data("date");
 
-    $('.countdown').countdown(countdown_date, function(event) {
+    $('.countdown').countdown(countdown_date, { 
+        elapse: true 
+    }).on('update.countdown', function(event) {
         $('.dday').html(event.strftime('%-D'));
         $('.dhour').html(event.strftime('%-H'));
         $('.dmin').html(event.strftime('%-M'));
         $('.dsec').html(event.strftime('%-S'));
-    });
+    }).on('finish.countdown', function(event) {
+        // Start the confetti effect
+        var duration = 30 * 1000; // 30 seconds
+        var end = Date.now() + duration;
+    
+        (function frame() {
+            // launch a few confetti from the left edge
+            confetti({
+                particleCount: 7,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 }
+            });
+            // and launch a few from the right edge
+            confetti({
+                particleCount: 7,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 }
+            });
+    
+            // keep going until we are out of time
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+    }());
+});
+    
 
     // Events Slider
     var next_event_slider = new Swiper('.next-event-slider', {
