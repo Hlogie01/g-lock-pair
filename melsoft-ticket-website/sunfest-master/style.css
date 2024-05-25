@@ -1457,14 +1457,14 @@ body {
     height: 100%;
 } */
 
-.ticket-video{
+.ticket-background-img{
     position: relative;
     width: 100%;
-    height: 50vh; /* Adjust height as needed */
+    height: 55vh; /* Adjust height as needed */
     overflow: hidden; /* Ensure video doesn't overflow */
 }
 
-.ticket-hero-video {
+.ticket-hero-image {
     position: absolute;
     top: 0;
     left: 0;
