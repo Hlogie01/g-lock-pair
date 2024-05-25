@@ -102,6 +102,6 @@ showEmptyCartMessage();
 
 // Add an event listener to the checkout button
 document.getElementById("checkout-button").addEventListener("click", function() {
-    // Redirect to the payment page
-    window.location.href = "payment.html";
+    // Redirect to the payment page along with the total amount as a URL parameter
+    window.location.href = "payment.html?totalAmount=" + totalAmount.toFixed(2);
 });

@@ -38,12 +38,43 @@ class PaymentForm {
 
     formatExpiryDate() {
         let expiryDate = this.expiryDateInput.value;
-        expiryDate = expiryDate.replace(/\D/g, ''); // Remove non-numeric characters
-        if (expiryDate.length >= 2 && expiryDate.charAt(1) !== '/') {
-            expiryDate = expiryDate.slice(0, 2) + '/' + expiryDate.slice(2);
+    expiryDate = expiryDate.replace(/\D/g, ''); // Remove non-numeric characters
+
+    // Check if the length is greater than or equal to 2.
+    // If so, it implies the user is entering the month.
+    if (expiryDate.length >= 2) {
+        // Validate month (should be between 01 and 12)
+        let month = parseInt(expiryDate.slice(0, 2));
+        if (month < 1 || month > 12) {
+            this.expiryDateInput.value = '';
+            return;
         }
-        this.expiryDateInput.value = expiryDate;
     }
+
+    // Check if the length is greater than or equal to 4.
+    // If so, it implies the user is entering the year.
+    if (expiryDate.length >= 4) {
+        // Extract year part and validate
+        let year = parseInt(expiryDate.slice(2));
+        if (year < 24 || year > 35) {
+            this.expiryDateInput.value = '';
+            return;
+        }
+    }
+
+    // Add '/' after the month if it's not already present
+    if (expiryDate.length >= 2 && expiryDate.charAt(2) !== '/') {
+        expiryDate = expiryDate.slice(0, 2) + '/' + expiryDate.slice(2);
+    }
+
+    // Truncate year to 2 digits if it's more than 2 digits
+    if (expiryDate.length > 5) {
+        expiryDate = expiryDate.slice(0, 5);
+    }
+
+    this.expiryDateInput.value = expiryDate;
+}
+
 
     // Form submission handler
     onSubmit(event) {
@@ -68,7 +99,6 @@ class PaymentForm {
             this.hideLoader();
         }, 4000); // 4 seconds
     }
-
     // Loader methods
     showLoader() {
         let loader = document.getElementById("loader");
@@ -80,6 +110,13 @@ class PaymentForm {
         loader.style.display = "none";
     }
 }
+
+// Retrieve the total amount from the URL parameter
+const urlParams = new URLSearchParams(window.location.search);
+const totalAmountParam = urlParams.get('totalAmount');
+
+// Update the total amount element on the payment page
+document.getElementById('total-amount').textContent = 'Total Amount: R' + totalAmountParam;
 
 // Instantiate PaymentForm object
 const paymentForm = new PaymentForm();
