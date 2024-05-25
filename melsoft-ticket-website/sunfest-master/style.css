@@ -2745,13 +2745,14 @@ body {
 
 .contact-page .contact-form input[type="text"],
 .contact-page .contact-form input[type="email"],
+.contact-page .contact-form input[type="number"],
 .contact-page .contact-form textarea {
   width: 100%;
   padding: 14px 22px;
   margin-bottom: 30px;
   border: 0;
   background: #f4f6f7;
-  color: #050505;
+  color:#33333369;
   outline: none;
 }
 
