@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login | Register</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="styles2.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
@@ -15,20 +14,16 @@
   </head>
   <body>
     <div class="container">
-      <form
-        id="form"
-        class="form"
-        method="get"
-        action="/melsoft-ticket-website/sunfest-master/login.html"
-      >
+      <form id="form" class="form" action="login.html">
         <h2>Sign Up</h2>
         <br />
         <div class="form-control">
+          <span id="usernameError" style="color: grey"></span>
           <label for="userName">Username</label>
           <input type="text" id="userName" placeholder="Enter username" />
         </div>
         <div class="form-control">
-          <span id="emailInput" style="color: yellow"></span>
+          <span id="emailError" style="color: red"></span>
           <label for="emailInput">Email</label>
           <input
             type="email"
@@ -56,6 +51,11 @@
           <input type="checkbox" class="login_check-input" id="input-check" />
           <label for="input-check" class="login_check-input">Remember Me</label>
         </div>
+        <div class="login">
+          <a href="login.html">
+            <h6>Have an account?LOGIN</h6>
+          </a>
+        </div>
         <span id="wrong_pass_alert"></span>
         <button
           class="btn"
@@ -70,5 +70,6 @@
         </button>
       </form>
     </div>
+    <script type="module" src="register.js"></script>
   </body>
 </html>
