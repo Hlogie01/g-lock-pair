@@ -1646,6 +1646,18 @@ body {
   height: 460px;
 }
 
+.organizer-tab-image{
+  width: 120%;
+  margin-top: 30px;
+}
+
+.organizer-tab-image iframe{
+  width: 120%;
+  height: 460px;
+  margin-left: 80px;
+}
+
+
 @media screen and (min-width: 768px) {
   .tickets-page .single-event-heading {
     width: auto;
@@ -1660,6 +1672,11 @@ body {
     margin: 0;
   }
 
+  .organizer-tab-image {
+    width: calc(100% - 220px);
+    margin: 0;
+  }
+
   .event-tickets {
     padding: 40px;
   }
@@ -1670,7 +1687,16 @@ body {
     width: 340px;
   }
 
+  .venue-event-details {
+    width: 640px;
+  }
+
   .single-event-map {
+    width: calc(100% - 340px);
+    margin: 0;
+  }
+
+  .organizer-tab-image  {
     width: calc(100% - 340px);
     margin: 0;
   }
@@ -2374,8 +2400,15 @@ body {
 .tabs-container .tab-content p {
   margin-top: 35px;
   color: #989898;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 300;
+  line-height: 2;
+}
+
+.tabs-container .tab-content h3 {
+  margin-top: 15px;
+  color: #989898;
+  font-size: 35px;
   line-height: 2;
 }
 
