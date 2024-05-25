@@ -1798,29 +1798,27 @@ body {
   align-items: center;
   color: red;
   font-size: 1.5em;
-  pointer-events: none; /* Prevents interaction with the overlay */
+  pointer-events: none; 
 }
 
-/* Ensure the parent container takes full width */
-/* .promo-code-container {
+.promo-code-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   margin-top: 20px; 
-} */
+}
 
-/* Center the elements within the promo-box */
-/* .promo-box {
+.promo-box {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px; 
   border-bottom: 3px solid #ff5500;
   margin: 15px 0;
-} */
+}
 
-/* .promo-box p{
+.promo-box p{
   color: red;
   display: none;
   width: 50%;
@@ -1864,7 +1862,7 @@ body {
 .btn-code:hover{
   color: #ff5500;
   border: 3px solid #ff5f00;
-} */
+}
 
 /*------------------------------------------------------------
 # Tickets Page Ticket Purchasing
