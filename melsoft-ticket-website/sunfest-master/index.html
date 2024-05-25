@@ -6,11 +6,13 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Hello World!</title>
+    <title>G-LOC EVENTS</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- FontAwesome CSS -->
     <link rel="stylesheet" href="css/fontawesome-all.min.css">
@@ -25,20 +27,20 @@
   <body>
     <header class="site-header">
       <div
-        id="carouselExampleSlidesOnly"
+        id="carouselExampleIndicators"
         class="carousel slide"
-        data-bs-ride="carousel"
+        data-ride="carousel" data-interval="6000"
       >
         <ol class="carousel-indicators">
           <li
-            data-bs-target="#carouselExampleSlidesOnly"
+            data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="0"
             class="active"
             aria-current="true"
             aria-label="First slide"
           ></li>
           <li
-            data-bs-target="#carouselExampleSlidesOnly"
+            data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to="1"
             aria-label="Second slide"
           ></li>
@@ -110,8 +112,9 @@
                       </div>
                     </li>
                     <li><a href="#artists-homepage-section">ARTISTS</a></li>
-                    <li><a href="#">GALLERY</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#gallery-section">GALLERY</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact-us.html">CONTACT</a></li>
                     <li>
                       <a href="#"><i class="fas fa-search"></i></a>
                     </li>
@@ -550,7 +553,7 @@
       <div class="home-page-last-news">
         <div class="container">
           <div class="header">
-            <div class="entry-title">
+            <div class="entry-title" id="gallery-section">
               <p>JUST THE BEST</p>
               <h2>Our Gallery</h2>
               <br><br>
@@ -748,6 +751,13 @@
       <!-- footer-content-wrapper -->
     </footer>
     <!-- site-footer -->
+
+    <!-- jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>

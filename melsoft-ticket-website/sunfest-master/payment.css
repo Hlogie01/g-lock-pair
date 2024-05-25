@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #fcfaf8;
+    background-color: #f7f7f7;
     margin: 0;
     padding: 0;
 }
@@ -8,16 +8,17 @@ body {
 .container {
     max-width: 400px;
     margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px; 
+    background-color: #ffffff;
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 30px;
+    color: #333333; 
 }
 
 form {
@@ -26,24 +27,27 @@ form {
 }
 
 label {
-    margin-bottom: 5px;
+    margin-bottom: 10px; 
+    color: #555555; 
 }
 
 input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px; 
+    margin-bottom: 20px; 
+    border: 1px solid #cccccc; 
+    border-radius: 6px; 
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 24px; 
     background-color: #ff5f00;
-    color: #fff;
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s ease; 
 }
+
 button:hover {
     background-color: #f59f2e;
 }
@@ -71,4 +75,17 @@ button:hover {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* Styling for the total amount */
+.total-amount-container {
+    text-align: center;
+    margin: 20px 0; /* Space above and below the total amount */
+}
+
+.total-amount-container span {
+    font-size: 1.5em; /* Larger font size */
+    font-weight: bold;
+    color: #333333; /* Darker text color */
+    display: block;
 }
