@@ -115,8 +115,10 @@ class PaymentForm {
 const urlParams = new URLSearchParams(window.location.search);
 const totalAmountParam = urlParams.get('totalAmount');
 
-// Update the total amount element on the payment page
-document.getElementById('total-amount').textContent = 'Total Amount: R' + totalAmountParam;
+ // Update the total amount element on the payment page
+ if (totalAmountParam) {
+    document.getElementById('total-amount').textContent = 'Total Amount: R' + totalAmountParam;
+}
 
 // Instantiate PaymentForm object
 const paymentForm = new PaymentForm();
