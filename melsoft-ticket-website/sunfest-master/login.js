@@ -6,7 +6,7 @@ function validateForm(event) {
   if (email === "" || password === "") {
     alert("Please fill all the fields.");
     event.preventDefault(); // Prevent form submission
-  }
+  } 
 }
 
 // function validate(form) {
