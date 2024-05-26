@@ -82,6 +82,10 @@ body {
     background: rgba(0, 0, 0, .6);
 }
 
+#carouselNoOverlay .carousel-item::after {
+  content: none; /* Remove the overlay for this specific carousel */
+}
+
 .carousel-control-prev {
     width: 90px;
     height: 60px;
@@ -129,6 +133,42 @@ body {
 #carouselId .carousel-indicators li:hover {
     background: var(--bs-secondary);
     opacity: 1;
+}
+
+/* Ticket Page About the Wine&Dine Event */
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item .content {
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  left: 20px;   /* Adjust as needed */
+  background: rgba(255, 255, 255, 0.5); 
+  border: 2px solid #ccc; 
+  padding: 15px; /* Padding inside the content block */
+  border-radius: 8px; /* Rounded corners */
+  max-width: 40%; /* Maximum width of the content block */
+  color: #000;
+}
+
+.carousel-item .content .name {
+  font-size: 1.8rem; /* Font size for the title */
+  font-weight: bold; /* Bold title */
+  margin-bottom: 10px; /* Space between title and description */
+  width: 100%;
+  text-shadow: -1px 0 0 #ff5500, 1px 1px 0 #ff5500, -1px 0 0 #ff5500, 1px -1px 0 #ffffff; /* Outline effect */
+}
+
+.carousel-item .content .description {
+  font-size: 1rem; /* Font size for the description */
+  width: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /*------------------------------------------------------------
@@ -1104,7 +1144,7 @@ body {
 # about-us
 ------------------------------------------------------------*/
 .about-us {
-
+  background: url("images/about-us-background.jpg") no-repeat;
   width: 100%;
   height: 100%;
 }
@@ -1138,7 +1178,6 @@ body {
 .about-us .page-header {
   background: url("./images/people2.jpeg") no-repeat;
   background-size: cover;
-  height: 600px;
 }
 
 .page-header .entry-title {
@@ -1273,11 +1312,11 @@ body {
   position: relative;
   background-image: linear-gradient(
     to bottom,
-    rgb(210, 137, 0),
-    rgb(235, 153, 0),
-    rgb(182, 119, 0),
-    orange,
-    rgb(201, 131, 0)
+    #0196bf,
+    #00a0bc,
+    #00a9b3,
+    #00b1a4,
+    #1bb791
   );
 }
 
@@ -1416,14 +1455,14 @@ body {
     height: 100%;
 } */
 
-.ticket-video{
+.ticket-background-img{
     position: relative;
     width: 100%;
-    height: 50vh; /* Adjust height as needed */
+    height: 55vh; /* Adjust height as needed */
     overflow: hidden; /* Ensure video doesn't overflow */
 }
 
-.ticket-hero-video {
+.ticket-hero-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -1431,6 +1470,23 @@ body {
     height: 100%;
     object-fit: cover; /* Ensure video covers entire container */
     z-index: -1; /* Send video to the background */
+}
+
+.ticket-video {
+  position: relative;
+  width: 100%;
+  height: 55vh; /* Adjust height as needed */
+  overflow: hidden; /* Ensure video doesn't overflow */
+}
+
+.ticket-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure video covers entire container */
+  z-index: -1; /* Send video to the background */
 }
 
 /*------------------------------------------------------------
@@ -1605,6 +1661,18 @@ body {
   height: 460px;
 }
 
+.organizer-tab-image{
+  width: 120%;
+  margin-top: 30px;
+}
+
+.organizer-tab-image iframe{
+  width: 120%;
+  height: 460px;
+  margin-left: 80px;
+}
+
+
 @media screen and (min-width: 768px) {
   .tickets-page .single-event-heading {
     width: auto;
@@ -1619,6 +1687,11 @@ body {
     margin: 0;
   }
 
+  .organizer-tab-image {
+    width: calc(100% - 220px);
+    margin: 0;
+  }
+
   .event-tickets {
     padding: 40px;
   }
@@ -1629,7 +1702,16 @@ body {
     width: 340px;
   }
 
+  .venue-event-details {
+    width: 640px;
+  }
+
   .single-event-map {
+    width: calc(100% - 340px);
+    margin: 0;
+  }
+
+  .organizer-tab-image  {
     width: calc(100% - 340px);
     margin: 0;
   }
@@ -1711,6 +1793,90 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: #ff2630;
+}
+
+/* CSS for blurred effect */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none; /* Prevents interaction with blurred element */
+}
+
+.unlock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: 1.5em;
+  pointer-events: none; 
+}
+
+.promo-code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; 
+}
+
+.promo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+  border-bottom: 3px solid #ff5500;
+  margin: 15px 0;
+}
+
+.promo-box p{
+  color: red;
+  display: none;
+  width: 50%;
+}
+
+.promo-box label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #000000;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.promo-box input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #000000;
+}
+
+.promo-box input:focus ~ label,
+.promo-box input:valid ~ label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.btn-code{
+  border-radius: 25px;
+  width: 70%;
+  padding: 6px;
+  margin-bottom: 15px;
+}
+
+.btn-code:hover{
+  color: #ff5500;
+  border: 3px solid #ff5f00;
 }
 
 /*------------------------------------------------------------
@@ -1811,148 +1977,18 @@ body {
 }s
 
 /* Tickets About Event Section */
-.tab-content .slide{
-    /* position: absolute; */
-    top: 50%;
-    left: 30%;
-    /* transform: translate(-50%, -50%); */
-    width: 500px;
-    height: 500px;
-    box-shadow: 0 30px 50px #505050;
-    
-}
 
-.tab-content  .slide .item{
-    width: 300px;
-    height: 400px;
-    position: absolute;
-    top: 80%;
-    transform: translate(0, -50%);
-    border-radius: 20px;
-    /* box-shadow: 0 30px 50px #ff5500; */
-    background-position: 50% 50%;
-    background-size: cover;
-    display: inline-block;
-    transition: 0.5s;
-}
-
-.tab-content .slide .item:nth-child(1) { 
-    top: 16%;
-    left: 4%;
-    transform: translate(0, 0);
-    border-radius: 0;
-    width: 80%;
-    height: 80%;
-}
-.tab-content  .slide .item:nth-child(2){
-    left: 41%;
-    display: block;
-}
-.tab-content  .slide .item:nth-child(3){
-    left: 60%;
-}
-.tab-content  .slide .item:nth-child(4){
-    left: calc(60% + 220px);
-}
-.tab-content  .slide .item:nth-child(5){
-    left: calc(60% + 440px);
-}
-.tab-content  .slide .item:nth-child(n + 6){
-    left: calc(60% + 660px);
-    opacity: 0;
-}
-
-.item .content{
-    position: absolute;
-    top: 50%;
-    left: 100px;
-    width: 300px;
-    text-align: left;
-    color: #eee;
-    transform: translate(0, -50%);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* display: none; */
-}
-
-.content .name{
-    font-size: 25px;
-    opacity: 0;
-    background-color: rgba(194, 193, 196, 0.4);
-    text-align: center;
-    animation: animateName 1s ease-in-out forwards;
-    font-weight: 600;
-}
-
-.content .description{
-    margin-top: 10px;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: animateDescription 1s ease-in-out 0.3s forwards;
-}
-
-@keyframes animateName{
-    from{
-        opacity: 0;
-        transform: translateY(100px);
-        filter: blur(33px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-    }
-}
-
-@keyframes animateDescription{
-    from{
-        opacity: 0;
-        transform: translateY(100px);
-        filter: blur(33px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-        filter: blur(0);
-    }
-}
-
-.carousel-control-prev-2 {
-    width: 40px;
-    height: 35px;
-    position: absolute;
-    top: 80%;
-    left: 15%;
-    background: var(--bs-primary);
-    border-radius: 50px 0 0 50px;
-    opacity: 1;
-    z-index: 1000;
-    transform: translateY(-50%);
-
-}
-
-.carousel-control-prev-2:hover {
-    border: 2px solid #ff5500;
-    transition: .8s;
-}
-
-.carousel-control-next-2 {
-    width: 40px;
-    height: 35px;
-    position: absolute;
-    top: 77.5%;
-    right: 76%;
-    background: var(--bs-primary);
-    border-radius: 0 50px 50px 0;
-    opacity: 1;
-}
-
-.carousel-control-next-2:hover {
-    border: 2px solid #ff5500;
-    transition: .8s;
-}
 
 
 /* Cart */
+.cart-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; /* Add some margin if needed */
+}
+
 .cart{
   width: 120%;
   float: right;
@@ -1983,12 +2019,14 @@ body {
 .total {
   font-weight: bold;
   margin-top: 20px;
+  color: #686767;
+
 }
 
 #empty-cart-message {
   text-align: center;
   font-size: 1.2em;
-  color: #888;
+  color: #686767;
 }
 
 .delete-button {
@@ -2014,12 +2052,24 @@ body {
 }
 
 .btn-checkout{
+  display: inline-block; 
   margin-top: 20px;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  text-align: center; 
+  text-decoration: none; 
+  color: white; 
+  background-color: #007bff;
+}
+
+.btn-checkout:hover {
+  background-color: #0056b3; 
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 /*------------------------------------------------------------
@@ -2383,8 +2433,15 @@ body {
 .tabs-container .tab-content p {
   margin-top: 35px;
   color: #989898;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 300;
+  line-height: 2;
+}
+
+.tabs-container .tab-content h3 {
+  margin-top: 15px;
+  color: #989898;
+  font-size: 35px;
   line-height: 2;
 }
 
@@ -2506,8 +2563,7 @@ body {
 }
 
 .gallery {
-  --s: 130px; /* control the size of the images*/
-
+  --s: 130px;
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 5px;
@@ -2534,7 +2590,7 @@ body {
   filter: brightness(0);
   pointer-events: none;
   transform-origin: var(--x) var(--y);
-  transition: 1s calc((var(--i) - 1) * 0.1s);
+  transition: 1s calc((var(--i) - 1) 0.1s);
 }
 .gallery > img:nth-of-type(1) {
   --i: 1;

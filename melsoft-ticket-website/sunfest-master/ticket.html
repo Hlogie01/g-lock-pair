@@ -25,11 +25,8 @@
 
 <body class="tickets-page">
     <header class="site-header">
-        <div class="ticket-video">
-            <video autoplay loop muted playsinline class="ticket-hero-video">
-                <source src="videos/Untitled video - Made with Clipchamp (3).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="ticket-background-img">
+            <img src="images/buy-tickets-background.jpg" alt="Buy Tickets Page Header Background" class="ticket-hero-image">
             <div class="page-header">
                 <div class="container">
                     <div class="row">
@@ -71,15 +68,16 @@
                                     <a href="index.html#events-homepage-section">EVENTS</a>
                                        <div class="dropdown-content">
                                         <a href="event-tickets.html">Buy Tickets</a>
-                                        <a href="ticket.html">Wine & Dine Event</a>
+                                        <a href="wine-events-page.html">Wine & Dine Event</a>
                                         <a href="burna.html">Burna Boy Concert</a>
                                         <a href="trevor.html">Trevor Noah Tour</a>
                                         <a href="cottonfest.html">Cotton Fest 2024</a>
                                        </div>
                                     </li>
                                 <li><a href="index.html#artists-homepage-section">ARTISTS</a></li>
-                                <li><a href="#">GALLERY</a></li>
-                                <li><a href="#">CONTACT</a></li>
+                                <li><a href="index.html#gallery-section">GALLERY</a></li>
+                                <li><a href="about-us.html">ABOUT US</a></li>
+                                <li><a href="contact-us.html">CONTACT</a></li>
                                 <li><a href="#"><i class="fas fa-search"></i></a></li>
                             </ul><!-- flex -->
                         </nav><!-- .site-navigation -->
@@ -125,24 +123,21 @@
                                     <h1 class="heading"><span>Ticket</span> Plan</h1>
                                     <div class="box-container">
                                         <!-- Free Ticket -->
-                                        <div class="box" id="box1">
+                                        <div class="box blurred" id="box1">
                                             <h3 class="title" id="title">Free</h3>
-                                            <h3 class="amount" id="amount">R0.00 | Code</h3>
+                                            <h3 class="amount" id="amount">R0.00</h3>
                                             <ul>
                                                 <li><i class="fas fa-check">1 glass of wine</i></li>
                                                 <li><i class="fas fa-check">1 platter of finger food/cocktail dishes</i></li>
                                                 <li><i class="fas fa-check">Complimentary event gift package</i></li>
                                             </ul>
                                             <div class="d-flex justify-content-center align-items-center">
-                                              <input type="submit" onclick="addToCart(box1)" id="add-to-cart-button-1" value="Buy Ticket" class="btn-ticket">
+                                              <input type="submit" onclick="addToCart(box1)" id="add-to-cart-button-1" value="Buy Ticket" class="btn-ticket" disabled>
                                             </div>
                                             <select class="select">
                                                 <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
                                               </select>
+                                              <div class="unlock-overlay" id="unlock-overlay">Enter Promo Code to Unlock</div>
                                         </div>
                                         <!-- General Ticket -->
                                         <div class="box" id="box2">
@@ -479,13 +474,27 @@
 
                         </div><!-- .tabs-container -->
                     </div><!-- .tabs -->
-                    <div class="cart" id="cart">
-                        <div class="title">YOUR TICKET CART</div>
-                        <hr/>
-                        <div id="cart-items"></div>
-                        <div class="total" id="total-amount">Total Amount: R0.00</div>
-                        <input type="submit" id="checkout-button" value="Checkout" class="btn-checkout">
-                    </div>
+
+
+<!-- Promo Code Section -->
+<div class="promo-code-container">
+    <div class="promo-box">
+        <label for="promo-code"></label>
+        <input type="text" id="promo-code" placeholder="Enter Promo Code:...">
+        <button type="button" class="btn-code" onclick="validatePromoCode()">Apply Code</button>
+        <p id="promo-code-message">Invalid Promo Code.</p>
+    </div>
+</div>
+
+    <div class="cart" id="cart">
+        <div class="title">YOUR TICKET CART</div>
+        <hr/>
+        <div id="cart-items"></div>
+        <div class="total" id="total-amount">Total Amount: R0.00</div>
+        <a href="javascript:void(0);" id="checkout-button" class="btn-checkout">Checkout</a>
+    </div>
+
+
 
                 </div><!-- .col-12 -->
             </div><!-- .row -->
