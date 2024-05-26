@@ -13,6 +13,9 @@ document.getElementById("searchButton").addEventListener("click", function () {
     case "burna boy":
       window.location.href = "burna.html";
       break;
+    case "trevor noah":
+      window.location.href = "trevor.html";
+      break;
     case "wine and dine":
       window.location.href = "wine-events-page.html";
       break;
