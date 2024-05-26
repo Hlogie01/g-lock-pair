@@ -9,7 +9,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: normal;
-  color: hsl(0, 0%, 90%);
+  color: hsl(0, 2%, 72%);
 }
 
 @font-face {
@@ -1237,6 +1237,16 @@ body {
   font-size: 48px;
   font-weight: 600;
   color: #040608;
+  margin-bottom: 5px;
+}
+
+.entry-header .entry-title h2{
+  margin: 2% 0 0 15%;
+  padding: 0;
+  font-size: 48px;
+  font-weight: 600;
+  color: #040608;
+  /* margin-bottom: 5px; */
 }
 
 .about-us .main-content .entry-content {
@@ -2218,6 +2228,42 @@ s
   height: auto;
 }
 
+.contact-icon {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  position: relative;
+  width: 70px;  /* Adjust based on the icon size */
+  height: 70px; /* Adjust based on the icon size */
+}
+
+.contact-icon::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: 80px;  /* Same as .contact-icon width */
+  height: 80px; /* Same as .contact-icon height */
+  background-color: rgb(255, 168, 6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contact-icon i {
+  font-size: 34px;  /* Adjust the icon size */
+  color: rgb(255, 255, 255);  /* Change the icon color */
+  position: relative;
+  z-index: 1;  /* Ensure icon is above the circle */
+  transition: color 0.3s, transform 0.3s; /* Add transition effects */
+}
+
+.contact-icon i:hover {
+  color: #000000;  /* Change color on hover */
+  transform: scale(1.2);  /* Enlarge icon on hover */
+}
+
+
 .contact-page .contact-details .contact-medium .entry-title {
   margin: 0;
   font-size: 16px;
@@ -2301,11 +2347,13 @@ s
 }
 
 .contact-page .contact-form .submit .btn {
-  padding: 15px 30px;
+  padding: 10px 25px;
   margin-right: 20px;
   border-radius: 0;
   font-weight: 600;
-  background: -webkit-linear-gradient(#00d0ff, #25ffbf);
+  border: -webkit-linear-gradient(#ff5500, #ff5500);
+  background: -webkit-linear-gradient(#ff5500, orange);
+  border-radius: 5px;
 }
 
 /*------------------------------------------------------------
