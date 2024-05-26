@@ -6,6 +6,9 @@ function validateForm(event) {
   if (email === "" || password === "") {
     alert("Please fill all the fields.");
     event.preventDefault(); // Prevent form submission
+  } else {
+    // Redirect to the tickets page if validation passes
+    window.location.href = '/melsoft-ticket-website/sunfest-master/ticket.html?';
   }
 }
 
