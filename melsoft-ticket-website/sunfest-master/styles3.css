@@ -270,7 +270,7 @@ section {
 .site-footer {
     position: relative;
     padding: 40px 0 30px;
-    background: url(images/footer-cover.jpg) no-repeat;
+    background: url(images/footer-background.png) no-repeat;
     background-size: cover;
   }
   
