@@ -5,7 +5,7 @@ document.getElementById("searchButton").addEventListener("click", function () {
   // Redirect based on search term
   switch (searchTerm) {
     case "ticket":
-      window.location.href = "ticket.html";
+      window.location.href = "signup.html";
       break;
     case "cottonfest":
       window.location.href = "cottonfest.html";
