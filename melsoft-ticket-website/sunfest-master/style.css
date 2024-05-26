@@ -34,21 +34,21 @@ body {
 /*------------------------------------------------------------
 # site-header
 ------------------------------------------------------------*/
-.carousel-item{
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Adjust height as needed */
-    overflow: hidden; /* Ensure video doesn't overflow */
+.carousel-item {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Adjust height as needed */
+  overflow: hidden; /* Ensure video doesn't overflow */
 }
 
 .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure video covers entire container */
-    z-index: -1; /* Send video to the background */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure video covers entire container */
+  z-index: -1; /* Send video to the background */
 }
 
 .site-header {
@@ -67,19 +67,19 @@ body {
 
 /* Carousel items */
 .carousel-inner {
-    position: relative;
-    text-align: center; /* To center the content within each item */
-    max-width: 100%;
+  position: relative;
+  text-align: center; /* To center the content within each item */
+  max-width: 100%;
 }
 
 .carousel-item::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, .6);
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 #carouselNoOverlay .carousel-item::after {
@@ -87,52 +87,51 @@ body {
 }
 
 .carousel-control-prev {
-    width: 90px;
-    height: 60px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    background: var(--bs-primary);
-    border-radius: 0 50px 50px 0;
-    opacity: 1;
-    z-index: 1000;
-    transform: translateY(-50%);
-
+  width: 90px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: var(--bs-primary);
+  border-radius: 0 50px 50px 0;
+  opacity: 1;
+  z-index: 1000;
+  transform: translateY(-50%);
 }
 
 .carousel-control-prev:hover {
-    background: var(--bs-secondary);
-    transition: .8s;
+  background: var(--bs-secondary);
+  transition: 0.8s;
 }
 
 .carousel-control-next {
-    width: 90px;
-    height: 60px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    background: var(--bs-primary);
-    border-radius: 50px 0 0 50px;
-    opacity: 1;
+  width: 90px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background: var(--bs-primary);
+  border-radius: 50px 0 0 50px;
+  opacity: 1;
 }
 
 .carousel-control-next:hover {
-    background: var(--bs-secondary);
-    transition: .8s;
+  background: var(--bs-secondary);
+  transition: 0.8s;
 }
 
 #carouselId .carousel-indicators li {
-    width: 30px;
-    height: 10px;
-    background: var(--bs-primary);
-    margin: 10px;
-    border-radius: 30px;
-    opacity: 1;
+  width: 30px;
+  height: 10px;
+  background: var(--bs-primary);
+  margin: 10px;
+  border-radius: 30px;
+  opacity: 1;
 }
 
 #carouselId .carousel-indicators li:hover {
-    background: var(--bs-secondary);
-    opacity: 1;
+  background: var(--bs-secondary);
+  opacity: 1;
 }
 
 /* Ticket Page About the Wine&Dine Event */
@@ -143,9 +142,9 @@ body {
 .carousel-item .content {
   position: absolute;
   bottom: 20px; /* Adjust as needed */
-  left: 20px;   /* Adjust as needed */
-  background: rgba(255, 255, 255, 0.5); 
-  border: 2px solid #ccc; 
+  left: 20px; /* Adjust as needed */
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid #ccc;
   padding: 15px; /* Padding inside the content block */
   border-radius: 8px; /* Rounded corners */
   max-width: 40%; /* Maximum width of the content block */
@@ -157,7 +156,8 @@ body {
   font-weight: bold; /* Bold title */
   margin-bottom: 10px; /* Space between title and description */
   width: 100%;
-  text-shadow: -1px 0 0 #ff5500, 1px 1px 0 #ff5500, -1px 0 0 #ff5500, 1px -1px 0 #ffffff; /* Outline effect */
+  text-shadow: -1px 0 0 #ff5500, 1px 1px 0 #ff5500, -1px 0 0 #ff5500,
+    1px -1px 0 #ffffff; /* Outline effect */
 }
 
 .carousel-item .content .description {
@@ -174,10 +174,9 @@ body {
 /*------------------------------------------------------------
 ## header-bar
 ------------------------------------------------------------*/
-------------------------------------------------------------*/
-.site-header {
-    position: relative;
-    width: 100%;
+------------------------------------------------------------*/ .site-header {
+  position: relative;
+  width: 100%;
 }
 
 .site-header .header-bar {
@@ -262,16 +261,16 @@ body {
 }
 
 .site-navigation {
-    position: absolute;
-    top: -11px;
-    right: 15px;
-    z-index: 9999;
-    width: auto;
-    height: 32px;
-    overflow: hidden;
-    list-style: none;
-    transition: all .35s;
-    color: hsl(0, 0%, 100%);
+  position: absolute;
+  top: -11px;
+  right: 15px;
+  z-index: 9999;
+  width: auto;
+  height: 32px;
+  overflow: hidden;
+  list-style: none;
+  transition: all 0.35s;
+  color: hsl(0, 0%, 100%);
 }
 
 .site-navigation.show {
@@ -279,16 +278,16 @@ body {
 }
 
 .site-navigation ul {
-    position: fixed;
-    top: 0;
-    left: -320px;
-    z-index: 9999;
-    width: 100%;
-    height: auto;
-    overflow-x: hidden;
-    padding: 30px;
-    margin: 0;
-    transition: all 0.35s;
+  position: fixed;
+  top: 0;
+  left: -320px;
+  z-index: 9999;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  padding: 30px;
+  margin: 0;
+  transition: all 0.35s;
 }
 
 .site-navigation.show ul {
@@ -296,49 +295,48 @@ body {
 }
 
 .site-navigation ul li {
-    display: block;
-    padding: 15px 0;
-    position: relative;
+  display: block;
+  padding: 15px 0;
+  position: relative;
 }
 
 .site-navigation ul li a {
-    display: block;
-    color: #fff;
-    transition: all 0.35s;
-    font-size: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
+  display: block;
+  color: #fff;
+  transition: all 0.35s;
+  font-size: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .site-navigation ul li a:hover {
-    color: #ff5f00;
-    text-shadow: 0 0 10px #ff5f00;
- }
-
- .site-navigation .dropdown {
-    position: relative;
-    
+  color: #ff5f00;
+  text-shadow: 0 0 10px #ff5f00;
 }
 
-.site-navigation .dropdown-content{
-    position: fixed;
-    background-color: #2b2828;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-    display: none;
+.site-navigation .dropdown {
+  position: relative;
+}
+
+.site-navigation .dropdown-content {
+  position: fixed;
+  background-color: #2b2828;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  display: none;
 }
 
 .site-navigation .dropdown-content a {
-    color: rgb(255, 255, 255);
-    padding: 12px 16px;
-    display: block;
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  display: block;
 }
-  
-.site-navigation .dropdown:hover .dropdown-content{
-    display: block;
+
+.site-navigation .dropdown:hover .dropdown-content {
+  display: block;
 }
 
 @media screen and (min-width: 992px) {
@@ -346,14 +344,14 @@ body {
     margin-left: 35px;
   }
 
-    .site-navigation {
-        position: relative;
-        top: auto;
-        right: auto;
-        height: 20%;
-        padding-right: 35px;
-        background: transparent;
-    }
+  .site-navigation {
+    position: relative;
+    top: auto;
+    right: auto;
+    height: 20%;
+    padding-right: 35px;
+    background: transparent;
+  }
 
   .site-navigation ul {
     display: flex;
@@ -387,14 +385,14 @@ body {
 # hero
 -----------------------------------------------------------*/
 .hero-content {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1; 
-    color: white; 
-    width: 90%;
-    background-color: #00a0bc00;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  width: 90%;
+  background-color: #00a0bc00;
 }
 
 .hero-content .entry-header {
@@ -436,13 +434,13 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-    .hero-content .entry-header h2 {
-        font-size: 102px;
-    }
+  .hero-content .entry-header h2 {
+    font-size: 102px;
+  }
 
-    .hero-content .entry-header h2 span{
-        font-size: 72px;
-    }
+  .hero-content .entry-header h2 span {
+    font-size: 72px;
+  }
 
   .hero-content .entry-header .entry-meta-date {
     top: 60px;
@@ -453,7 +451,7 @@ body {
 ## countdown
 ------------------------------------------------------------*/
 .countdown {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .countdown-holder {
@@ -465,12 +463,12 @@ body {
 .countdown-holder .dhour,
 .countdown-holder .dmin,
 .countdown-holder .dsec {
-    display: block;
-    font-size: 62px;
-    font-weight: 600;
-    line-height: 1;
-    color:#ff5f00;
-    margin-top: 20px;
+  display: block;
+  font-size: 62px;
+  font-weight: 600;
+  line-height: 1;
+  color: #ff5f00;
+  margin-top: 20px;
 }
 
 .countdown-holder label {
@@ -484,59 +482,59 @@ body {
 ## hero-content entry-footer
 ------------------------------------------------------------*/
 .hero-content .entry-footer {
-    margin-top: 35px;
-    text-align: center;
+  margin-top: 35px;
+  text-align: center;
 }
 
 /* === removing default button style ===*/
 .hero-content .entry-footer .button {
-    margin-left: 20px;
-    height: auto;
-    background: rgb(0, 0, 0);
-    padding: 0;
-    border: none;
-    cursor: pointer;
-  }
+  margin-left: 20px;
+  height: auto;
+  background: rgb(0, 0, 0);
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
 
 .hero-content .entry-footer .button {
-    --border-right: 6px;
-    --text-stroke-color: rgba(255,255,255,0.6);
-    --animation-color: #ff5f00;
-    --fs-size: 2em;
-    letter-spacing: 3px;
-    text-decoration: none;
-    font-size: var(--fs-size);
-    font-family: "Arial";
-    position: relative;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
-    position: relative;
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: #ff5f00;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+  position: relative;
 }
 
 /* this is the text, when you hover on button */
 .hover-text {
-    position: absolute;
-    box-sizing: border-box;
-    content: attr(data-text);
-    color: var(--animation-color);
-    width: 0;
-    inset: 0;
-    border-right: var(--border-right) solid var(--animation-color);
-    overflow: hidden;
-    transition: 0.2s;
-    -webkit-text-stroke: 2px var(--animation-color);
-  }
-  /* hover */
-  .button:hover .hover-text {
-    width: 104%;
-    border: none;
-    filter: drop-shadow(0 0 23px var(--animation-color))
-  }
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.2s;
+  -webkit-text-stroke: 2px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 104%;
+  border: none;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
 
 /* Adjust the color property to make the original text visible */
 .hero-content .entry-footer .button .actual-text {
-    color: white; /* or any other color you prefer */
+  color: white; /* or any other color you prefer */
 }
 
 /*------------------------------------------------------------
@@ -1168,34 +1166,32 @@ body {
 ## Page Header
 ------------------------------------------------------------*/
 .page-header {
-    min-height: 20px;
-    padding-top: 0;
-    background-size: cover;
+  min-height: 20px;
+  padding-top: 0;
+  background-size: cover;
 }
 
-
-
 .about-us .page-header {
-  background:url("./images/crowd.jpeg") no-repeat;/*-------------------------------------*/
+  background: url("./images/crowd.jpeg") no-repeat; /*-------------------------------------*/
   height: 500px;
 
   background-size: cover;
 }
 
 .page-header .entry-title {
-    font-size: 72px;
-    color: #ff5f00;
-    margin-top: 22%;
-    padding: 0;
+  font-size: 72px;
+  color: #ff5f00;
+  margin-top: 22%;
+  padding: 0;
 }
 
 .page-header .breadcrumbs {
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-    font-weight: 300;
-    color: #ff5f00;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #ff5f00;
+  list-style: none;
 }
 
 .page-header .breadcrumbs li {
@@ -1204,7 +1200,7 @@ body {
 }
 
 .page-header .breadcrumbs li::after {
-  content: '/';
+  content: "/";
   position: absolute;
   top: 3px;
   right: 0;
@@ -1224,7 +1220,7 @@ body {
 }
 
 .main-content {
-    margin: 100px 0;
+  margin: 100px 0;
 }
 
 .main-content .entry-header .entry-title p {
@@ -1457,21 +1453,21 @@ body {
     height: 100%;
 } */
 
-.ticket-background-img{
-    position: relative;
-    width: 100%;
-    height: 55vh; /* Adjust height as needed */
-    overflow: hidden; /* Ensure video doesn't overflow */
+.ticket-background-img {
+  position: relative;
+  width: 100%;
+  height: 55vh; /* Adjust height as needed */
+  overflow: hidden; /* Ensure video doesn't overflow */
 }
 
 .ticket-hero-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure video covers entire container */
-    z-index: -1; /* Send video to the background */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure video covers entire container */
+  z-index: -1; /* Send video to the background */
 }
 
 .ticket-video {
@@ -1495,102 +1491,103 @@ body {
 # Page Header
 ------------------------------------------------------------*/
 .tickets-page .tabs .tab-nav {
-    padding: 10px 20px;
-    margin-right: 0;
-    font-size: 13px;
-    line-height: 1;
-    font-weight: 900;
-    cursor: pointer;
-    margin-top: 35px;
-    text-align: center;
+  padding: 10px 20px;
+  margin-right: 0;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 900;
+  cursor: pointer;
+  margin-top: 35px;
+  text-align: center;
 }
 
 .tickets-page .tabs .tab-nav .btn {
-    margin-left: 10px;
-    height: auto;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-    --text-stroke-color: rgba(0, 0, 0, 0.6);
-    --animation-color: #ff5f00;
-    --fs-size: 2em;
-    letter-spacing: 3px;
-    text-decoration: none;
-    font-size: var(--fs-size);
-    position: relative;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
-    position: relative;
-    border-radius: 20px;
+  margin-left: 10px;
+  height: auto;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  --text-stroke-color: rgba(0, 0, 0, 0.6);
+  --animation-color: #ff5f00;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+  position: relative;
+  border-radius: 20px;
 }
 
 .tickets-page .tabs .tab-nav .btn::before {
-    margin-left: auto;
-    border: none;
+  margin-left: auto;
+  border: none;
 }
 
 .tickets-page .tabs .tab-nav .btn::after,
 .tickets-page .tabs .tab-nav .btn::before {
-    content: '';
-    width: 0%;
-    height: 5px;
-    background: #ff5f00;
-    display: block;
-    transition: 0.5s;
-    border: none;
+  content: "";
+  width: 0%;
+  height: 5px;
+  background: #ff5f00;
+  display: block;
+  transition: 0.5s;
+  border: none;
 }
 
 .tickets-page .tabs .tab-nav .btn:hover::after,
 .tickets-page .tabs .tab-nav .btn:hover::before {
-    width: 100%;
-    border: none;
+  width: 100%;
+  border: none;
 }
 
 /* this is the text, when you hover on button */
 .tickets-page .tabs .tab-nav .btn:hover .hover-text {
-    width: 101%;
-    border: none;
+  width: 101%;
+  border: none;
 }
 
 .tickets-page .tabs .tabs-nav .tab-nav.active {
-    background: -webkit-linear-gradient(#ff5f00, #ff5f00) !important;
-    border: none;
+  background: -webkit-linear-gradient(#ff5f00, #ff5f00) !important;
+  border: none;
 }
 
 .tickets-page .tabs .active {
-    background: -webkit-linear-gradient(#ff5f00, #ff5f00) !important;
+  background: -webkit-linear-gradient(#ff5f00, #ff5f00) !important;
 }
 
 .btn {
-    background: none;
-    margin-left: 20px;
-    border: none;
+  background: none;
+  margin-left: 20px;
+  border: none;
 }
 
-.btn-ticket{
-    margin-left: 20px;
-    background-color: #fff;
-    border: none;
-    padding: 10px 20px;
+.btn-ticket {
+  margin-left: 20px;
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
 }
 
-.btn::after, 
+.btn::after,
 .btn::before {
-    content: '';
-    width: 0%;
-    height: 5px;
-    background: #ff5f00;
-    display: block;
-    transition: 0.5s;
+  content: "";
+  width: 0%;
+  height: 5px;
+  background: #ff5f00;
+  display: block;
+  transition: 0.5s;
 }
-  
-.btn:hover::after, .btn:hover::before {
-    width: 100%;
+
+.btn:hover::after,
+.btn:hover::before {
+  width: 100%;
 }
 
 .tickets-page .tabs .tabs-container {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .tickets-page .tabs .tab-content {
@@ -1663,17 +1660,16 @@ body {
   height: 460px;
 }
 
-.organizer-tab-image{
+.organizer-tab-image {
   width: 120%;
   margin-top: 30px;
 }
 
-.organizer-tab-image iframe{
+.organizer-tab-image iframe {
   width: 120%;
   height: 460px;
   margin-left: 80px;
 }
-
 
 @media screen and (min-width: 768px) {
   .tickets-page .single-event-heading {
@@ -1713,7 +1709,7 @@ body {
     margin: 0;
   }
 
-  .organizer-tab-image  {
+  .organizer-tab-image {
     width: calc(100% - 340px);
     margin: 0;
   }
@@ -1781,20 +1777,18 @@ body {
 
 .tickets-page .number-of-tickets .increase-ticket,
 .tickets-page .number-of-tickets .decrease-ticket {
-    font-size: 18px;
-    font-weight: 500;
-    color: #03070c;
-    cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  color: #03070c;
+  cursor: pointer;
 }
 
-
-
 .tickets-page .ticket-row .btn {
-    background: #f3f8f9;
-    width: 100px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #ff2630;
+  background: #f3f8f9;
+  width: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ff2630;
 }
 
 /* CSS for blurred effect */
@@ -1815,7 +1809,7 @@ body {
   align-items: center;
   color: red;
   font-size: 1.5em;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .promo-code-container {
@@ -1823,19 +1817,19 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .promo-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; 
+  gap: 10px;
   border-bottom: 3px solid #ff5500;
   margin: 15px 0;
 }
 
-.promo-box p{
+.promo-box p {
   color: red;
   display: none;
   width: 50%;
@@ -1869,14 +1863,14 @@ body {
   transform: translateY(-120%);
 }
 
-.btn-code{
+.btn-code {
   border-radius: 25px;
   width: 70%;
   padding: 6px;
   margin-bottom: 15px;
 }
 
-.btn-code:hover{
+.btn-code:hover {
   color: #ff5500;
   border: 3px solid #ff5f00;
 }
@@ -1884,106 +1878,107 @@ body {
 /*------------------------------------------------------------
 # Tickets Page Ticket Purchasing
 ------------------------------------------------------------*/
-.price .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 1.4rem;
-    margin: 10px 20px;
+.price .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1.4rem;
+  margin: 10px 20px;
 }
 
-.price .box-container .box{
-    padding: 2rem 2rem;
-    background: #e6e4e4;
-    border-radius: .5rem;
-    text-align: center;
+.price .box-container .box {
+  padding: 2rem 2rem;
+  background: #e6e4e4;
+  border-radius: 0.5rem;
+  text-align: center;
 }
 
 .box h3.title,
 .box h3.price,
 .box ul li {
-    color: black; /* Change the font color to black */
+  color: black; /* Change the font color to black */
 }
 
-.price .box-container .box:hover{
-    transform: scale(1.03);
-    box-shadow: 10px 15px 10px rgba(255, 102, 0, 0.5);
+.price .box-container .box:hover {
+  transform: scale(1.03);
+  box-shadow: 10px 15px 10px rgba(255, 102, 0, 0.5);
 }
 
-.price .box-container .box .title{
-    background: #ff5500;
-    color: rgb(0, 0, 0);
-    padding: 1rem 0;
-    font-size: 2rem;
+.price .box-container .box .title {
+  background: #ff5500;
+  color: rgb(0, 0, 0);
+  padding: 1rem 0;
+  font-size: 2rem;
 }
 
-.price .box-container .box .amount{
-    color: rgb(0, 0, 0);
-    padding-top: 1rem;
-    padding-bottom: 2.2rem;
-    font-size: 2rem;
+.price .box-container .box .amount {
+  color: rgb(0, 0, 0);
+  padding-top: 1rem;
+  padding-bottom: 2.2rem;
+  font-size: 2rem;
 }
 
 .price .box-container .box ul {
-    list-style: none;
-    padding: .5rem 0;
+  list-style: none;
+  padding: 0.5rem 0;
 }
 
 .price .box-container .box ul li {
-    font-size: 1.5rem;
-    color: #000000;
-    padding: .5rem 0;
-    font-family: inherit;
+  font-size: 1.5rem;
+  color: #000000;
+  padding: 0.5rem 0;
+  font-family: inherit;
 }
 
-.price .box-container .box ul li i{
-    font-size: 1.3rem;
-    color: #000000;
-    padding-right: 1rem;
+.price .box-container .box ul li i {
+  font-size: 1.3rem;
+  color: #000000;
+  padding-right: 1rem;
 }
 
-.price .box-container .box ul li i .fa-check{
-    color: #ff5500;
+.price .box-container .box ul li i .fa-check {
+  color: #ff5500;
 }
 
 .tickets-page .number-of-tickets {
-    display: flex;
-    margin: 20px auto; 
+  display: flex;
+  margin: 20px auto;
 }
 
 .tickets-page .number-of-tickets .increase-ticket,
 .tickets-page .number-of-tickets .decrease-ticket {
-    font-size: 30px;
-    font-weight: 500;
-    color: #03070c;
-    cursor: pointer;
+  font-size: 30px;
+  font-weight: 500;
+  color: #03070c;
+  cursor: pointer;
 }
 
 .tickets-page .number-of-tickets .ticket-count {
-    font-size: 28px;
-    font-weight: 400;
-    color: #03070c;
-    width: 60px;
-    border: 0;
-    text-align: center;
-    background: #e6e4e4;
+  font-size: 28px;
+  font-weight: 400;
+  color: #03070c;
+  width: 60px;
+  border: 0;
+  text-align: center;
+  background: #e6e4e4;
 }
 
 .tickets-page .clear-ticket-count .btn-ticket {
-    font-size: 17px;
-    color: #2b2929;
-    cursor: pointer;
-    background:  #ffffff; 
-    padding: 5px 10px; 
-    width: 40%;
-    border-radius: 5px;
-}s
+  font-size: 17px;
+  color: #2b2929;
+  cursor: pointer;
+  background: #ffffff;
+  padding: 5px 10px;
+  width: 40%;
+  border-radius: 5px;
+}
+s
 
 /* Tickets About Event Section */
 
 
 
 /* Cart */
-.cart-container{
+.cart-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1991,7 +1986,7 @@ body {
   margin-top: 20px; /* Add some margin if needed */
 }
 
-.cart{
+.cart {
   width: 120%;
   float: right;
   text-align: center;
@@ -2022,7 +2017,6 @@ body {
   font-weight: bold;
   margin-top: 20px;
   color: #686767;
-
 }
 
 #empty-cart-message {
@@ -2048,27 +2042,27 @@ body {
   font-weight: 700;
 }
 
-.select{
+.select {
   margin-top: 10px;
   width: 40px;
 }
 
-.btn-checkout{
-  display: inline-block; 
+.btn-checkout {
+  display: inline-block;
   margin-top: 20px;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  text-align: center; 
-  text-decoration: none; 
-  color: white; 
+  text-align: center;
+  text-decoration: none;
+  color: white;
   background-color: #007bff;
 }
 
 .btn-checkout:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
@@ -2654,4 +2648,20 @@ body {
   display: grid;
   place-content: center;
   background: #fff;
+}
+
+#searchInput {
+  border: 2px solid orange; /* Orange border */
+  border-radius: 20px; /* Rounded corners */
+  padding: 8px; /* Adjust padding as needed */
+}
+
+#searchButton {
+  background-color: transparent; /* Transparent background */
+  border: none;
+  cursor: pointer;
+}
+
+#searchButton i {
+  color: orange; /* Orange color for icon */
 }
