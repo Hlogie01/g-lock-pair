@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: hsla(35, 94%, 49%, 0.6);
+  background-image: url(images/carousel-1.jpg);
   background-size: cover;
   font-family: "Open Sans", sans-serif;
   display: flex;
@@ -25,7 +25,7 @@ body {
   height: 80vh;
   background-color: hsla(244, 16%, 92%, 0.6);
   border-radius: 5px;
-  box-shadow: 0 5px 20px rgba(232, 118, 4, 0.3);
+  box-shadow: 0 5px 20px rgba(252, 128, 3, 0.3);
   width: 400px;
   border-radius: 25px;
 }
