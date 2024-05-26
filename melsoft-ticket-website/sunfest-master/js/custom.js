@@ -259,10 +259,8 @@ document.addEventListener("DOMContentLoaded", function() {
         showItem(currentIndex);
     }
 
-    document.addEventListener("DOMContentLoaded", function(){
         document.querySelector(".carousel-control-prev").addEventListener("click", prev);
         document.querySelector(".carousel-control-next").addEventListener("click", next);
-    })
 
     // Start autoplay if needed
     // const intervalId = setInterval(next, 5000);
