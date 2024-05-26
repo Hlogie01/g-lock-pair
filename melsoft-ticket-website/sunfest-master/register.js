@@ -27,7 +27,7 @@ class PasswordValidator {
 
     if (pass !== confirmPass) {
       this.wrongPassAlert.style.color = "grey";
-      this.wrongPassAlert.innerHTML = "Use the same password";
+      this.wrongPassAlert.innerHTML = "Passwords don't match";
       this.createButton.disabled = true;
       this.createButton.style.opacity = 0.4;
     } else if (pass.length < 8) {
