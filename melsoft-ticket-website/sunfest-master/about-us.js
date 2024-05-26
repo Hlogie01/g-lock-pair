@@ -1,67 +1,55 @@
-class CountUp {
-    constructor(cities, countries, visitors, stages, followers) {
-      this.cities = cities;
-      this.countries = countries;
-      this.visitors = visitors;
-      this.stages = stages;
-      this.followers = followers;
-    }
-  
-    countUpCities() {
-      return this.cities.map((city, index) => {
-        return {
-          id: index + 1,
-          name: city,
-          count: index + 1,
-        };
-      });
-    }
-  
-    countUpCountries() {
-      return this.countries.map((country, index) => {
-        return {
-          id: index + 1,
-          name: country,
-          count: index + 1,
-        };
-      });
-    }
-  
-    countUpVisitors() {
-      return this.visitors.map((visitor, index) => {
-        return {
-          id: index + 1,
-          name: visitor,
-          count: index + 1,
-        };
-      });
-    }
-  
-    countUpStages() {
-      return this.stages.map((stage, index) => {
-        return {
-          id: index + 1,
-          name: stage,
-          count: index + 1,
-        };
-      });
-    }
-  
-    countUpFollowers() {
-      return this.followers.map((follower, index) => {
-        return {
-          id: index + 1,
-          name: follower,
-          count: index + 1,
-        };
-      });
+class Counter {
+  constructor(element) {
+    this.element = element;
+    this.increment = 1;
+    this.maxData = parseInt(this.element.getAttribute("max-data"));
+  }
+
+  update() {
+    if (this.increment < this.maxData) {
+      this.increment++;
+      this.element.innerHTML = this.increment;
     }
   }
-  
+}
 
-  console.log(countUp.countUpCities());
-  console.log(countUp.countUpCountries());
-  console.log(countUp.countUpVisitors());
-  console.log(countUp.countUpStages());
-  console.log(countUp.countUpFollowers());
+let counters = [];
+
+function intervalFunc() {
+  for (let i = 0; i < counters.length; i++) {
+    counters[i].update();
+  }
+}
+
+setInterval(intervalFunc, 300);
+
+let countElements = document.getElementsByClassName("count");
+
+for (let i = 0; i < countElements.length; i++) {
+  counters.push(new Counter(countElements[i]));
+}
+
+
+class VideoPlayer {
+  constructor() {
+    this.videos = document.querySelectorAll('video');
+  }
+
+  muteAllVideos() {
+    this.videos.forEach(video => {
+      video.muted = true;
+    });
+  }
+
+  playAllVideos() {
+    this.videos.forEach(video => {
+      video.play();
+    });
+  }
+}
+
+// Create a new instance of the VideoPlayer class and mute and play all videos
+const videoPlayer = new VideoPlayer();
+videoPlayer.muteAllVideos();
+videoPlayer.playAllVideos();
 
