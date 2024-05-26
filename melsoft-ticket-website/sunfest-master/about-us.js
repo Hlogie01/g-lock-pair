@@ -21,11 +21,35 @@ function intervalFunc() {
   }
 }
 
-setInterval(intervalFunc, 85);
+setInterval(intervalFunc, 300);
 
 let countElements = document.getElementsByClassName("count");
 
 for (let i = 0; i < countElements.length; i++) {
   counters.push(new Counter(countElements[i]));
 }
+
+
+class VideoPlayer {
+  constructor() {
+    this.videos = document.querySelectorAll('video');
+  }
+
+  muteAllVideos() {
+    this.videos.forEach(video => {
+      video.muted = true;
+    });
+  }
+
+  playAllVideos() {
+    this.videos.forEach(video => {
+      video.play();
+    });
+  }
+}
+
+// Create a new instance of the VideoPlayer class and mute and play all videos
+const videoPlayer = new VideoPlayer();
+videoPlayer.muteAllVideos();
+videoPlayer.playAllVideos();
 

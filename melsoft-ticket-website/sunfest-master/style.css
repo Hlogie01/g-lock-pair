@@ -1144,7 +1144,7 @@ body {
 # about-us
 ------------------------------------------------------------*/
 .about-us {
-  background: url("images/about-us-background.jpg") no-repeat;
+
   width: 100%;
   height: 100%;
 }
@@ -1312,11 +1312,11 @@ body {
   position: relative;
   background-image: linear-gradient(
     to bottom,
-    #0196bf,
-    #00a0bc,
-    #00a9b3,
-    #00b1a4,
-    #1bb791
+   rgb(203, 132, 0),
+    rgb(201, 131, 0),
+    rgb(168, 109, 0),
+  rgb(146, 95, 0),
+    rgb(129, 84, 0)
   );
 }
 
@@ -2309,7 +2309,7 @@ body {
   margin-right: 20px;
   border-radius: 0;
   font-weight: 600;
-  background: -webkit-linear-gradient(#00d0ff, #25ffbf);
+  background: -webkit-linear-gradient(orange, rgb(162, 105, 0));
 }
 
 /*------------------------------------------------------------
