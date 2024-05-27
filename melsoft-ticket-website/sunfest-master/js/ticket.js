@@ -27,9 +27,9 @@ class Ticket {
 // Class representing a user
 class User {
     constructor(name) {
-        this.name = name; // Name of the user
-        this.cart = []; // Array to store tickets added to the user's cart
-        this.totalAmount = 0; // Total amount of the tickets in the cart
+        this.name = name; 
+        this.cart = []; 
+        this.totalAmount = 0; 
     }
 
     // Method to add a ticket to the user's cart
@@ -60,41 +60,8 @@ class User {
     }
 }
 
-// Updating event handlers and logic
-
-// Event listener for increasing ticket quantity
-document.querySelectorAll('.increase-ticket').forEach(button => {
-    button.addEventListener('click', function() {
-        const ticketCountInput = this.previousElementSibling;
-        const ticketId = ticketCountInput.dataset.ticketId;
-        const ticket = tickets.find(t => t.id === ticketId);
-        ticket.increaseQuantity();
-        ticketCountInput.value = ticket.quantity;
-    });
-});
-
-// Event listener for decreasing ticket quantity
-document.querySelectorAll('.decrease-ticket').forEach(button => {
-    button.addEventListener('click', function() {
-        const ticketCountInput = this.nextElementSibling;
-        const ticketId = ticketCountInput.dataset.ticketId;
-        const ticket = tickets.find(t => t.id === ticketId);
-        ticket.decreaseQuantity();
-        ticketCountInput.value = ticket.quantity;
-    });
-});
-
 let addItemId = 0; // Counter for unique IDs of added items
-const user = new User(''); // Example user
-
-// Function to display user's name in the cart
-function displayUserName() {
-    const userInfo = document.getElementById("user-info");
-    userInfo.textContent = "Hi " + user.name; // Displaying the user's name
-}
-
-// Call the displayUserName function to display the user's name initially
-displayUserName();
+const user = new User('John Doe'); // Example user
 
 // Function to validate promo code
 function validatePromoCode() {
