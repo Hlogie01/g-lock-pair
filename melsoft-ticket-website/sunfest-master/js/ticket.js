@@ -1,47 +1,44 @@
 // Defining the classes
+
+// Class representing an event
 class Event {
     constructor(name, date) {
-        this.name = name;
-        this.date = date;
-        this.tickets = [];
+        this.name = name; 
+        this.date = date; 
+        this.tickets = []; 
     }
 
+    // Method to add a ticket to the event
     addTicket(ticket) {
         this.tickets.push(ticket);
     }
 }
 
+// Class representing a ticket
 class Ticket {
     constructor(id, event, price, quantity = 0) {
-        this.id = id;
-        this.event = event;
-        this.price = price;
-        this.quantity = quantity;
-    }
-
-    increaseQuantity() {
-        this.quantity++;
-    }
-
-    decreaseQuantity() {
-        if (this.quantity > 0) {
-            this.quantity--;
-        }
+        this.id = id; 
+        this.event = event; 
+        this.price = price; 
+        this.quantity = quantity; 
     }
 }
 
+// Class representing a user
 class User {
     constructor(name) {
-        this.name = name;
-        this.cart = [];
-        this.totalAmount = 0;
+        this.name = name; // Name of the user
+        this.cart = []; // Array to store tickets added to the user's cart
+        this.totalAmount = 0; // Total amount of the tickets in the cart
     }
 
+    // Method to add a ticket to the user's cart
     addToCart(ticket) {
         this.cart.push(ticket);
         this.updateTotalAmount();
     }
 
+    // Method to remove a ticket from the user's cart
     removeFromCart(ticketId) {
         const ticketIndex = this.cart.findIndex(ticket => ticket.id === ticketId);
         if (ticketIndex > -1) {
@@ -51,17 +48,21 @@ class User {
         }
     }
 
+    // Method to update the total amount of the user's cart
     updateTotalAmount() {
         this.totalAmount = this.cart.reduce((sum, ticket) => sum + ticket.price * ticket.quantity, 0);
         this.displayTotalAmount();
     }
 
+    // Method to display the total amount in the UI
     displayTotalAmount() {
         document.getElementById('total-amount').textContent = 'Total Amount: R' + this.totalAmount.toFixed(2);
     }
 }
 
 // Updating event handlers and logic
+
+// Event listener for increasing ticket quantity
 document.querySelectorAll('.increase-ticket').forEach(button => {
     button.addEventListener('click', function() {
         const ticketCountInput = this.previousElementSibling;
@@ -72,6 +73,7 @@ document.querySelectorAll('.increase-ticket').forEach(button => {
     });
 });
 
+// Event listener for decreasing ticket quantity
 document.querySelectorAll('.decrease-ticket').forEach(button => {
     button.addEventListener('click', function() {
         const ticketCountInput = this.nextElementSibling;
@@ -83,8 +85,18 @@ document.querySelectorAll('.decrease-ticket').forEach(button => {
 });
 
 let addItemId = 0; // Counter for unique IDs of added items
-const user = new User('John Doe'); // Example user
+const user = new User(''); // Example user
 
+// Function to display user's name in the cart
+function displayUserName() {
+    const userInfo = document.getElementById("user-info");
+    userInfo.textContent = "Hi " + user.name; // Displaying the user's name
+}
+
+// Call the displayUserName function to display the user's name initially
+displayUserName();
+
+// Function to validate promo code
 function validatePromoCode() {
     const promoCodeInput = document.getElementById('promo-code').value;
     if (promoCodeInput === 'GLOC-2024') {
@@ -97,6 +109,7 @@ function validatePromoCode() {
     }
 }
 
+// Function to add an item to the cart
 function addToCart(itemElement) {
     const emptyCartMessage = document.getElementById('empty-cart-message');
     if (emptyCartMessage) {
@@ -115,8 +128,6 @@ function addToCart(itemElement) {
     const selectedItem = document.createElement('div');
     selectedItem.classList.add('box');
     selectedItem.setAttribute('id', 'item-' + ticket.id);
-
-
 
     // Determine the event and add the appropriate title
     let eventTitleText;
@@ -165,6 +176,7 @@ function addToCart(itemElement) {
     cartItems.appendChild(selectedItem);
 }
 
+// Function to show an empty cart message
 function showEmptyCartMessage() {
     const cartItems = document.getElementById('cart-items');
     const emptyCartMessage = document.createElement('div');
@@ -176,13 +188,11 @@ function showEmptyCartMessage() {
 // Initial call to show the empty cart message
 showEmptyCartMessage();
 
-// Add an event listener to the checkout button
+// Event listener for the checkout button
 document.getElementById("checkout-button").addEventListener("click", function() {
     // Get the total amount
     var totalAmount = document.getElementById("total-amount").textContent.split('R')[1].trim();
 
     // Redirect to the payment page with the total amount as a URL parameter
-        window.location.href = "payment.html?totalAmount=" + encodeURIComponent(totalAmount);
+    window.location.href = "payment.html?totalAmount=" + encodeURIComponent(totalAmount);
 });
-
-

@@ -339,6 +339,7 @@ body {
   display: block;
 }
 
+
 @media screen and (min-width: 992px) {
   .header-bar .site-branding {
     margin-left: 35px;
@@ -575,7 +576,7 @@ body {
   padding: 0;
   font-size: 14px;
   font-weight: 600;
-  color: hsl(0, 0%, 48%);
+  color: hsl(0, 1%, 28%);
 }
 
 .lineup-artists-headline .entry-title h2 {
@@ -1554,7 +1555,7 @@ body {
 }
 
 /* this is the text, when you hover on button */
-.tickets-page .tabs .tab-nav .btn:hover .hover-text {
+.tickets-page .tabs .tabs-nav .btn:hover .hover-text {
   width: 101%;
   border: none;
 }
@@ -1605,24 +1606,6 @@ body {
   color: #989898;
   font-size: 15px;
   line-height: 1.8;
-}
-
-@media screen and (min-width: 576px) {
-  .tabs .tab-nav {
-    padding: 20px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .tabs .tab-content {
-    padding: 48px;
-  }
-
-  .tabs .tab-nav {
-    padding: 20px 60px;
-    margin-right: 10px;
-    font-size: 15px;
-  }
 }
 
 .tickets-page .single-event-details-row {
@@ -1981,11 +1964,6 @@ body {
   width: 40%;
   border-radius: 5px;
 }
-s
-
-/* Tickets About Event Section */
-
-
 
 /* Cart */
 .cart-container {
@@ -2077,6 +2055,131 @@ s
   text-decoration: none;
   font-weight: 600;
 }
+
+/*------------------------------------------------------------
+# Media Queries
+------------------------------------------------------------*/
+/* For small screens */
+@media screen and (max-width: 800px) {
+  .tabs .tabs-nav {
+    display: block !important;
+    width: 120%;
+  }
+  .tickets-page .tabs .tab-nav {
+    font-size: 7px;
+    padding: 10px;
+    flex: 1 1 50%; /* Full width for each tab */
+  }
+
+  .page-header .entry-title {
+    font-size: 52px;
+    color: #ff5f00;
+    margin-top: 55%;
+    padding: 0;
+  }
+
+  .main-content .entry-header .entry-title h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-weight: 600;
+    color: #040608;
+    margin-bottom: 5px;
+  }
+
+  .tabs-container {
+    width: 110%;
+  }
+
+  .tabs-container .tab-content {
+    width: 110%;
+  }
+
+  .tickets-page .main-content .event-tickets .ticket-type span {
+    font-size: 12px;
+    width: 50px;
+  }
+
+  .tickets-page .main-content .event-tickets .ticket-price {
+    font-size: 14px;
+    width: 20px;
+  }
+  .price .box-container {
+    grid-template-columns: 1fr; /* One column */
+  }
+}
+
+
+/* For medium screens */
+@media screen and (min-width: 801px) and (max-width: 1224px) {
+  .tabs .tabs-nav {
+    display: block !important;
+    width: 120%;
+  }
+  .tickets-page .tabs .tab-nav {
+    font-size: 10px;
+    padding: 10px 30px;
+    margin-right: 10px;
+    width: auto; 
+  }
+  .page-header .entry-title {
+    font-size: 72px;
+    color: #ff5f00;
+    margin-top: 25%;
+    padding: 0;
+  }
+
+  .tabs-container {
+    width: 100%;
+  }
+
+  .tabs-container .tab-content {
+    width: 100%;
+    padding: 48px;
+  }
+
+  .tickets-page .main-content .event-tickets .ticket-type span {
+    font-size: 12px;
+    width: 50px;
+  }
+
+  .tickets-page .main-content .event-tickets .ticket-price {
+    font-size: 14px;
+    width: 20px;
+  }
+
+  .price .box-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+}
+
+
+/* For large screens */
+@media screen and (min-width: 1225px) {
+  .tickets-page .tabs .tab-nav {
+    padding: 10px 20px;
+    margin-right: 0;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 35px;
+    text-align: center;
+  }
+
+  .tabs-container {
+    width: 100%;
+  }
+
+  .tabs-container .tab-content {
+    width: 100%;
+    padding: 48px;
+  }
+  .price .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); /* Default or adjust as needed */
+  }
+}
+
 
 /*------------------------------------------------------------
 # Blog
@@ -2443,9 +2546,9 @@ s
   list-style: none;
 }
 
-.tabs ul .active {
+/* .tabs ul .active {
   background: -webkit-linear-gradient(#00d0ff, #25ffbf) !important;
-}
+} */
 
 .tabs ul .tab-nav {
   padding: 15px 40px;
