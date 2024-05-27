@@ -90,9 +90,11 @@ function addToCart(itemElement) {
     const selectElement = itemElement.querySelector('select');
     const selectedQuantity = parseInt(selectElement.options[selectElement.selectedIndex].text);
 
+    // Creating a new Ticket object representing the item
     const ticket = new Ticket(addItemId++, title, amount, selectedQuantity);
     user.addToCart(ticket);
 
+    // Creating a new HTML element to represent the selected item in the cart
     const selectedItem = document.createElement('div');
     selectedItem.classList.add('box');
     selectedItem.setAttribute('id', 'item-' + ticket.id);
@@ -116,6 +118,7 @@ function addToCart(itemElement) {
         selectedItem.appendChild(eventTitle);
     }
 
+    // Create HTML elements to display item details: title, amount, quantity
     const h3Title = document.createElement('h3');
     h3Title.textContent = title;
     selectedItem.appendChild(h3Title);
@@ -128,6 +131,7 @@ function addToCart(itemElement) {
     h3Quantity.textContent = 'Quantity: ' + selectedQuantity;
     selectedItem.appendChild(h3Quantity);
 
+    // A delete button and its functionality to remove the item from the cart
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'X';
     deleteButton.classList.add('delete-button');
