@@ -83,6 +83,7 @@ function addToCart(itemElement) {
         emptyCartMessage.remove();
     }
 
+    // Getting item info from tickets
     const title = itemElement.querySelector('.title').textContent;
     const amountText = itemElement.querySelector('.amount').textContent;
     const amount = parseFloat(amountText.replace(/[^\d.-]/g, ''));
