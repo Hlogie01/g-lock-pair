@@ -111,7 +111,7 @@ function addToCart(itemElement) {
     if (eventTitleText) {
         const eventTitle = document.createElement('h3');
         eventTitle.textContent = eventTitleText;
-        eventTitle.classList.add('event-title'); // Add a class for styling if needed
+        eventTitle.classList.add('event-title'); 
         selectedItem.appendChild(eventTitle);
     }
 
