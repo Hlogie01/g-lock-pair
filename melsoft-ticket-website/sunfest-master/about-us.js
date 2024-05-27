@@ -48,7 +48,6 @@ class VideoPlayer {
   }
 }
 
-// Create a new instance of the VideoPlayer class and mute and play all videos
 const videoPlayer = new VideoPlayer();
 videoPlayer.muteAllVideos();
 videoPlayer.playAllVideos();
