@@ -23,7 +23,7 @@ document.getElementById("searchButton").addEventListener("click", function () {
       window.location.href = "#artists-homepage-section";
     default:
       // If search term doesn't match any predefined case, you can handle it accordingly
-      alert("No match found for the search term.");
+      alert("No results found");
       break;
   }
 });
