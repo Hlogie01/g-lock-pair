@@ -17,6 +17,7 @@
         $('.dhour').html(event.strftime('%-H'));
         $('.dmin').html(event.strftime('%-M'));
         $('.dsec').html(event.strftime('%-S'));
+        
     }).on('finish.countdown', function(event) {
         // Start the confetti effect
         var duration = 30 * 1000; // 30 seconds
