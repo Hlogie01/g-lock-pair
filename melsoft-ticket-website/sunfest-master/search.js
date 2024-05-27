@@ -7,7 +7,7 @@ document.getElementById("searchButton").addEventListener("click", function () {
     case "ticket":
       window.location.href = "signup.html";
       break;
-    case "cottonfest":
+    case "cotton fest":
       window.location.href = "cottonfest.html";
       break;
     case "burna boy":
