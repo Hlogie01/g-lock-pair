@@ -17,33 +17,8 @@
         $('.dhour').html(event.strftime('%-H'));
         $('.dmin').html(event.strftime('%-M'));
         $('.dsec').html(event.strftime('%-S'));
-    }).on('finish.countdown', function(event) {
-        // Start the confetti effect
-        var duration = 30 * 1000; // 30 seconds
-        var end = Date.now() + duration;
-    
-        (function frame() {
-            // launch a few confetti from the left edge
-            confetti({
-                particleCount: 7,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 }
-            });
-            // and launch a few from the right edge
-            confetti({
-                particleCount: 7,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 }
-            });
-    
-            // keep going until we are out of time
-            if (Date.now() < end) {
-                requestAnimationFrame(frame);
-            }
-    }());
-});
+        
+    })
     
 
     // Events Slider
@@ -85,32 +60,6 @@
         }
     });
 
-    // Buy Tickets Form
-    $(".increase-ticket").click(function() {
-        var $n = $(this)
-            .parent(".number-of-tickets")
-            .parent(".flex")
-            .parent(".ticket-row")
-            .find(".ticket-count");
-        $n.val(Number($n.val())+1 );
-    });
-
-    $(".decrease-ticket").click(function() {
-        var $n = $(this)
-            .parent(".number-of-tickets")
-            .parent(".flex")
-            .parent(".ticket-row")
-            .find(".ticket-count");
-        var amount = Number($n.val());
-        if (amount > 0) {
-            $n.val(amount-1);
-        }
-    });
-
-    $(".clear-ticket-count").on( 'click', function() {
-        var $count = $('.ticket-count');
-        $count.val('0');
-    });
 
     // Tabs
     $(function() {
