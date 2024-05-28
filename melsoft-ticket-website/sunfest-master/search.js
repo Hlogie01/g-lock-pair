@@ -7,7 +7,7 @@ document.getElementById("searchButton").addEventListener("click", function () {
     case "ticket":
       window.location.href = "signup.html";
       break;
-    case "cottonfest":
+    case "cotton fest":
       window.location.href = "cottonfest.html";
       break;
     case "burna boy":
@@ -23,7 +23,7 @@ document.getElementById("searchButton").addEventListener("click", function () {
       window.location.href = "#artists-homepage-section";
     default:
       // If search term doesn't match any predefined case, you can handle it accordingly
-      alert("No match found for the search term.");
+      alert("No results found");
       break;
   }
 });

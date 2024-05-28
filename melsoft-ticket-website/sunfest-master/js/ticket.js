@@ -1,47 +1,44 @@
 // Defining the classes
+
+// Class representing an event
 class Event {
     constructor(name, date) {
-        this.name = name;
-        this.date = date;
-        this.tickets = [];
+        this.name = name; 
+        this.date = date; 
+        this.tickets = []; 
     }
 
+    // Method to add a ticket to the event
     addTicket(ticket) {
         this.tickets.push(ticket);
     }
 }
 
+// Class representing a ticket
 class Ticket {
     constructor(id, event, price, quantity = 0) {
-        this.id = id;
-        this.event = event;
-        this.price = price;
-        this.quantity = quantity;
-    }
-
-    increaseQuantity() {
-        this.quantity++;
-    }
-
-    decreaseQuantity() {
-        if (this.quantity > 0) {
-            this.quantity--;
-        }
+        this.id = id; 
+        this.event = event; 
+        this.price = price; 
+        this.quantity = quantity; 
     }
 }
 
+// Class representing a user
 class User {
     constructor(name) {
-        this.name = name;
-        this.cart = [];
-        this.totalAmount = 0;
+        this.name = name; 
+        this.cart = []; 
+        this.totalAmount = 0; 
     }
 
+    // Method to add a ticket to the user's cart
     addToCart(ticket) {
         this.cart.push(ticket);
         this.updateTotalAmount();
     }
 
+    // Method to remove a ticket from the user's cart
     removeFromCart(ticketId) {
         const ticketIndex = this.cart.findIndex(ticket => ticket.id === ticketId);
         if (ticketIndex > -1) {
@@ -51,40 +48,22 @@ class User {
         }
     }
 
+    // Method to update the total amount of the user's cart
     updateTotalAmount() {
         this.totalAmount = this.cart.reduce((sum, ticket) => sum + ticket.price * ticket.quantity, 0);
         this.displayTotalAmount();
     }
 
+    // Method to display the total amount in the UI
     displayTotalAmount() {
         document.getElementById('total-amount').textContent = 'Total Amount: R' + this.totalAmount.toFixed(2);
     }
 }
 
-// Updating event handlers and logic
-document.querySelectorAll('.increase-ticket').forEach(button => {
-    button.addEventListener('click', function() {
-        const ticketCountInput = this.previousElementSibling;
-        const ticketId = ticketCountInput.dataset.ticketId;
-        const ticket = tickets.find(t => t.id === ticketId);
-        ticket.increaseQuantity();
-        ticketCountInput.value = ticket.quantity;
-    });
-});
-
-document.querySelectorAll('.decrease-ticket').forEach(button => {
-    button.addEventListener('click', function() {
-        const ticketCountInput = this.nextElementSibling;
-        const ticketId = ticketCountInput.dataset.ticketId;
-        const ticket = tickets.find(t => t.id === ticketId);
-        ticket.decreaseQuantity();
-        ticketCountInput.value = ticket.quantity;
-    });
-});
-
 let addItemId = 0; // Counter for unique IDs of added items
 const user = new User('John Doe'); // Example user
 
+// Function to validate promo code
 function validatePromoCode() {
     const promoCodeInput = document.getElementById('promo-code').value;
     if (promoCodeInput === 'GLOC-2024') {
@@ -97,26 +76,28 @@ function validatePromoCode() {
     }
 }
 
+// Function to add an item to the cart
 function addToCart(itemElement) {
     const emptyCartMessage = document.getElementById('empty-cart-message');
     if (emptyCartMessage) {
         emptyCartMessage.remove();
     }
 
+    // Getting item info from tickets
     const title = itemElement.querySelector('.title').textContent;
     const amountText = itemElement.querySelector('.amount').textContent;
     const amount = parseFloat(amountText.replace(/[^\d.-]/g, ''));
     const selectElement = itemElement.querySelector('select');
     const selectedQuantity = parseInt(selectElement.options[selectElement.selectedIndex].text);
 
+    // Creating a new Ticket object representing the item
     const ticket = new Ticket(addItemId++, title, amount, selectedQuantity);
     user.addToCart(ticket);
 
+    // Creating a new HTML element to represent the selected item in the cart
     const selectedItem = document.createElement('div');
     selectedItem.classList.add('box');
     selectedItem.setAttribute('id', 'item-' + ticket.id);
-
-
 
     // Determine the event and add the appropriate title
     let eventTitleText;
@@ -133,10 +114,11 @@ function addToCart(itemElement) {
     if (eventTitleText) {
         const eventTitle = document.createElement('h3');
         eventTitle.textContent = eventTitleText;
-        eventTitle.classList.add('event-title'); // Add a class for styling if needed
+        eventTitle.classList.add('event-title'); 
         selectedItem.appendChild(eventTitle);
     }
 
+    // Create HTML elements to display item details: title, amount, quantity
     const h3Title = document.createElement('h3');
     h3Title.textContent = title;
     selectedItem.appendChild(h3Title);
@@ -149,6 +131,7 @@ function addToCart(itemElement) {
     h3Quantity.textContent = 'Quantity: ' + selectedQuantity;
     selectedItem.appendChild(h3Quantity);
 
+    // A delete button and its functionality to remove the item from the cart
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'X';
     deleteButton.classList.add('delete-button');
@@ -165,6 +148,7 @@ function addToCart(itemElement) {
     cartItems.appendChild(selectedItem);
 }
 
+// Function to show an empty cart message
 function showEmptyCartMessage() {
     const cartItems = document.getElementById('cart-items');
     const emptyCartMessage = document.createElement('div');
@@ -176,13 +160,11 @@ function showEmptyCartMessage() {
 // Initial call to show the empty cart message
 showEmptyCartMessage();
 
-// Add an event listener to the checkout button
+// Event listener for the checkout button
 document.getElementById("checkout-button").addEventListener("click", function() {
     // Get the total amount
     var totalAmount = document.getElementById("total-amount").textContent.split('R')[1].trim();
 
     // Redirect to the payment page with the total amount as a URL parameter
-        window.location.href = "payment.html?totalAmount=" + encodeURIComponent(totalAmount);
+    window.location.href = "payment.html?totalAmount=" + encodeURIComponent(totalAmount);
 });
-
-
